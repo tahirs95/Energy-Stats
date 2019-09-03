@@ -1,0 +1,88 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Survey",
+		"_postman_id": "15f2053f-438c-76f2-42db-e083ccf1a884",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Building",
+			"request": {
+				"url": "http://127.0.0.1:8000/survey/building",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Og==",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Building 1",
+			"request": {
+				"url": "http://127.0.0.1:8000/survey/add_building",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"tahirs95@hotmail.com\",\n\t\"title\":\"Hellosssssssssss\",\n    \"building_name\":\"Rehman Homes\",\n    \"address\":\"Plot 137\",\n    \"square_footage\":123,\n    \"uses\":[\"use 45\", \"use 99\"],\n    \"electricity_provider\":\"KE\",\n    \"applicable_options\":[\"option 99\", \"option 100\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Building 3",
+			"request": {
+				"url": "http://127.0.0.1:8000/survey/add_building",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"tahirs95@hotmail.com\",\n\t\"aggregated_bills\":[1.99, 2.99],\n\t\"co2_current\":1.99,\n\t\"co2_2024\":2.99,\n\t\"co2_2030\":3.99\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add Building 2",
+			"request": {
+				"url": "http://127.0.0.1:8000/survey/add_building",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"tahirs95@hotmail.com\",\n\t\"group\":\"group 1\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
