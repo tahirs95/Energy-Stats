@@ -4,12 +4,21 @@
         <div class="card">
             <div class="card-body">
                 <h1>Log In</h1>
-                <form method="POST" novalidate>
+                
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">
+                    {% if 'safe' in message.tags %}{{ message|safe }}{% else %}{{ message }}{% endif %}
+                    </li>
+                {% endfor %}
+                
+                <form method="POST">
                     {% csrf_token %}
-                    {{ form|crispy }}
+                    {{ form.email }}
+                    {{ form.password }}
                     <button type="submit" class="btn btn-primary">Log In</button>
                 <a href="{%url 'password_reset'%}" class="btn btn-link">Forgot Password?</a> 
                 </form>
+
             </div>
         </div>
     </div>

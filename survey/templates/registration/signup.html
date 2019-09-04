@@ -6,7 +6,11 @@
                 <h1>Sign Up</h1>
                 <form method="POST" novalidate>
                     {% csrf_token %}
-                    {{ form|crispy }}
+                    {{ form.first_name }}
+                    {{ form.last_name }}
+                    {{ form.email }}
+                    {{ form.password1 }}
+                    {{ form.password2 }}
                     <button type="submit" class="btn btn-primary">Sign Up</button>
                 </form>
             </div>

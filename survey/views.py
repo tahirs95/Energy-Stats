@@ -31,7 +31,7 @@ def signup(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             new_user = form.save(commit=False)
-            new_user.set_password(form.cleaned_data['password'])
+            new_user.set_password(form.cleaned_data['password1'])
             userName = str(new_user.first_name) + ' ' + str(new_user.last_name)
             new_user.username = userName
             form.save()
@@ -61,8 +61,8 @@ def user_login(request):
                 return redirect("/survey/")
             else:
                 print("fail")
-                messages.error(request, "Invalid login.")
-                return redirect('registration/login')
+                messages.error(request, "Email or Password is incorrect.")
+                return redirect('/login/')
     else:
         form = LoginForm()
     return render(request, 'registration/login.html',{'form':form})
@@ -70,7 +70,7 @@ def user_login(request):
 # @login_required(login_url='/login/')
 def get_buildings(request ,*args, **kwargs):
     building_dict = {}
-    building = Building.objects.filter(user=1)
+    building = Building.objects.filter(user=request.user)
     for a in building:      
         building_dict["user"] = a.user.username
         building_dict["title"] = a.title
@@ -95,6 +95,7 @@ def add_buildings(request):
 
     # loading request data
     user_email = request_data["email"]
+    page = request_data["page"]
     user = User.objects.get(email=user_email)
 
     if "title" in request_data:
@@ -114,6 +115,7 @@ def add_buildings(request):
             square_footage=square_footage,
             # applicable_options=applicable_options,
             electricity_provider=electricity_provider,
+            page=page
             )
         for applicable_option in applicable_options:
             option_row = Option.objects.create(options=applicable_option)
@@ -129,6 +131,7 @@ def add_buildings(request):
         building = Building.objects.get(user=user)
         group = request_data["group"]
         building.group = group
+        building.page = page
         building.save()
 
         return JsonResponse({"status":"True", "message":"Building has been edited."})
@@ -142,6 +145,7 @@ def add_buildings(request):
         building.co2_current = co2_current
         building.co2_2024 = co2_2024
         building.co2_2030 = co2_2030
+        building.page = page
         building.save()
         
         building.aggregated_bills.clear()

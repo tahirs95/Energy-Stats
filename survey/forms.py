@@ -31,15 +31,15 @@ class LoginForm(forms.Form):
     email = forms.EmailField(label='Email',required=True, widget=forms.EmailInput(attrs={'maxlength':150,'placeholder':'Email'}))
     password = forms.CharField(label='Password',required=True,widget= forms.PasswordInput(attrs={'maxlength':150,'placeholder':'Password'}))
 
-class SignUpForm(forms.ModelForm):
+class SignUpForm(UserCreationForm):
     email = forms.EmailField(label='Email',required=True, widget=forms.EmailInput(attrs={'maxlength':150,'placeholder':'Email'}))
     first_name = forms.CharField(label='First Name',required=False, widget=forms.TextInput(attrs={'maxlength':150,'placeholder':'First Name'}))
     last_name = forms.CharField(label = 'Last Name',required=False, widget=forms.TextInput(attrs={'maxlength':150,'placeholder':'Last Name'}))
-    password = forms.CharField(label='Password',widget= forms.PasswordInput(attrs={'maxlength':150,'placeholder':'Password'}))
+    password1 = forms.CharField(label='Password',widget= forms.PasswordInput(attrs={'maxlength':150,'placeholder':'Password'}))
+    password2 = forms.CharField(label='Password2',widget= forms.PasswordInput(attrs={'maxlength':150,'placeholder':'Repeat Password'}))
+
 
 
     class Meta(UserCreationForm.Meta):
         model = User
-        # I've tried both of these 'fields' declaration, result is the same
-        # fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )
-        fields = ('first_name', 'last_name', 'email',)
+        fields = ('first_name', 'last_name', 'email', 'password1', 'password2', )
