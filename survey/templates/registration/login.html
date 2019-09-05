@@ -1,25 +1,86 @@
 {% load crispy_forms_tags %}
-<div class="row justify-content-center">
-    <div class="col-4">
-        <div class="card">
-            <div class="card-body">
-                <h1>Log In</h1>
-                
-                {% for message in messages %}
-                    <li class="{{ message.tags }}">
-                    {% if 'safe' in message.tags %}{{ message|safe }}{% else %}{{ message }}{% endif %}
-                    </li>
-                {% endfor %}
-                
-                <form method="POST">
-                    {% csrf_token %}
-                    {{ form.email }}
-                    {{ form.password }}
-                    <button type="submit" class="btn btn-primary">Log In</button>
-                <a href="{%url 'password_reset'%}" class="btn btn-link">Forgot Password?</a> 
-                </form>
+{% load static %}
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="icon" type="image/png" href="{% static "images1/icons/favicon.ico" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "vendor1/bootstrap/css/bootstrap.min.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "fonts1/font-awesome-4.7.0/css/font-awesome.min.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "fonts1/Linearicons-Free-v1.0.0/icon-font.min.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendor1/animate/animate.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendor1/css-hamburgers/hamburgers.min.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendor1/animsition/css/animsition.min.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendor1/select2/select2.min.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendor1/daterangepicker/daterangepicker.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css1/util.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "css1/main.css" %}">
+    </head>
+    <style>
+    @font-face {
+        font-family: Ubuntu-Regular;
+        src: url("{% static 'fonts1/ubuntu/Ubuntu-Regular.ttf' %}"); 
+    }
+
+    @font-face {
+        font-family: Ubuntu-Bold;
+        src: url("{% static 'fonts1/ubuntu/Ubuntu-Bold.ttf' %}"); 
+    }
+    
+    .login100-form-btn {
+        background: -webkit-linear-gradient(bottom, #79be85, #118249);
+    }
+    </style>
+    <body>
+        <div class="limiter">
+		    <div class="container-login100" style="background-image: url('{% static 'images1/comp1.jpg' %}');">
+			    <div class="wrap-login100 p-t-30 p-b-50">
+                    <span class="login100-form-title p-b-41">
+                        Account Login
+                    </span>
+                        
+                    {% for message in messages %}
+                        <li class="{{ message.tags }}">
+                        {% if 'safe' in message.tags %}{{ message|safe }}{% else %}{{ message }}{% endif %}
+                        </li>
+                    {% endfor %}
+                        
+                    <form class="login100-form validate-form p-b-33 p-t-5" method="POST">
+                        {% csrf_token %}
+                        <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                            <div class="input100" style="margin-top:10px">{{ form.email }}</div>
+                            <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input" data-validate="Enter password">
+                            <div class="input100" style="margin-top:10px">{{ form.password }}</div>
+                            <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                        </div>
+
+                        <div class="container-login100-form-btn m-t-32">
+                            <button class="login100-form-btn">
+                                Login
+                            </button>
+                        </div>
+                        
+                        <a style="width:100%; display:flex; justify-content:center" href="{%url 'password_reset'%}" class="btn btn-link">Forgot Password?</a> 
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+        <script>
+            $('form').attr('autocomplete','off');
+        </script>
+        <script src="{% static "vendor1/jquery/jquery-3.2.1.min.js" %}"></script>
+        <script src="{% static "vendor1/animsition/js/animsition.min.js" %}"></script>
+        <script src="{% static "vendor1/bootstrap/js/popper.js" %}"></script>
+        <script src="{% static "vendor1/bootstrap/js/bootstrap.min.js" %}"></script>
+        <script src="{% static "vendor1/select2/select2.min.js" %}"></script>
+        <script src="{% static "vendor1/daterangepicker/moment.min.js" %}"></script>
+        <script src="{% static "vendor1/daterangepicker/daterangepicker.js" %}"></script>
+        <script src="{% static "vendor1/countdowntime/countdowntime.js" %}"></script>
+        <script src="{% static "js1/main.js"></script>
+    </body>
+</html>

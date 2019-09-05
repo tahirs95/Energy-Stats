@@ -1,19 +1,113 @@
 {% load crispy_forms_tags %}
-<div class="row justify-content-center">
-    <div class="col-4">
-        <div class="card">
-            <div class="card-body">
-                <h1>Sign Up</h1>
-                <form method="POST" novalidate>
-                    {% csrf_token %}
-                    {{ form.first_name }}
-                    {{ form.last_name }}
-                    {{ form.email }}
-                    {{ form.password1 }}
-                    {{ form.password2 }}
-                    <button type="submit" class="btn btn-primary">Sign Up</button>
-                </form>
-            </div>
+{% load static %}
+<html>
+    <head>
+        <title>Sign Up</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="icon" type="image/png" href="{% static "images/icons/favicon.ico" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "vendor/bootstrap/css/bootstrap.min.css" %}">
+        <link rel="stylesheet" type="text/css" href="{% static "fonts/font-awesome-4.7.0/css/font-awesome.min.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "fonts/Linearicons-Free-v1.0.0/icon-font.min.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "fonts/iconic/css/material-design-iconic-font.min.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendor/animate/animate.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendor/css-hamburgers/hamburgers.min.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendor/animsition/css/animsition.min.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendor/select2/select2.min.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendor/daterangepicker/daterangepicker.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/util.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "css/main.css"%}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+
+    <style>
+    input {
+        width:350px;
+        color:#3B3895;
+        font-size: 22px;
+    }
+
+    .login100-more::before {
+        background: -webkit-linear-gradient(bottom, #826c77, #87c0a3)
+    }
+
+    .login100-form-btn {
+        background: -webkit-linear-gradient(bottom, #79be85, #118249);
+    }
+
+    .login100-form-btn::before {
+        background: -webkit-linear-gradient(bottom, #79be85, #118249);
+    }
+
+    .hov1:hover {
+        color: #118249;
+    }
+
+    html { overflow-x: hidden; }
+    </style>
+    <body>
+        <div class="limiter">
+                <div class="container-login100">
+                    <div class="login100-more" style="background-image: url('{% static 'images/img.png' %}');"></div>
+                    <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+                        <form class="login100-form validate-form" method="POST" novalidate>
+                            {% csrf_token %}
+                            <span class="login100-form-title p-b-59">
+                                Sign Up
+                            </span>
+                            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                                <span class="label-input100">First Name</span><br>
+                                <div style="margin-left:2px; margin-top:5px;">{{ form.first_name }}</div>
+                                <span class="focus-input100"></span>
+                            </div>
+                            <div class="wrap-input100 validate-input" data-validate="Name is required">
+                                <span class="label-input100">Last Name</span><br>
+                                <div style="margin-left:2px; margin-top:5px;">{{ form.last_name }}</div>
+                                <span class="focus-input100"></span>
+                            </div>
+                            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                                <span class="label-input100">Email</span><br>
+                                <div style="margin-left:2px; margin-top:5px;">{{ form.email }}</div>
+                                <span class="focus-input100"></span>
+                            </div>
+                            <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                                <span class="label-input100">Password</span><br>
+                                <div style="margin-left:2px; margin-top:5px;">{{ form.password1 }}</div>
+                                <span class="focus-input100"></span>
+                            </div>
+                            <div class="wrap-input100 validate-input" data-validate = "Repeat Password is required">
+                                <span class="label-input100">Repeat Password</span><br>
+                                <div style="margin-left:2px; margin-top:5px;">{{ form.password2 }}</div>
+                                <span class="focus-input100"></span>
+                            </div>
+                            <div class="container-login100-form-btn">
+                                <div class="wrap-login100-form-btn">
+                                    <div class="login100-form-bgbtn"></div>
+                                    <button class="login100-form-btn">
+                                        Sign Up
+                                    </button>
+                                </div>
+                                <a href="#" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+                                    Sign in
+                                    <i class="fa fa-long-arrow-right m-l-5"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
         </div>
-    </div>
-</div>
+    <script>
+        $('form').attr('autocomplete','off');
+    </script>
+    <script src="{% static "vendor/jquery/jquery-3.2.1.min.js" %}"></script>
+	<script src="{% static "vendor/animsition/js/animsition.min.js" %}"></script>
+	<script src="{% static "vendor/bootstrap/js/popper.js" %}"></script>
+	<script src="{% static "vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+	<script src="{% static "vendor/select2/select2.min.js" %}"></script>
+	<script src="{% static "vendor/daterangepicker/moment.min.js" %}"></script>
+	<script src="{% static "vendor/daterangepicker/daterangepicker.js" %}"></script>
+	<script src="{% static "vendor/countdowntime/countdowntime.js" %}"></script>
+	<script src="{% static "js/main.js" %}"></script>
+    </body>
+</html>

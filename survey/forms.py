@@ -28,15 +28,15 @@ User._meta.get_field('email')._unique = True
 #     status = forms.BooleanField()
 
 class LoginForm(forms.Form):
-    email = forms.EmailField(label='Email',required=True, widget=forms.EmailInput(attrs={'maxlength':150,'placeholder':'Email'}))
-    password = forms.CharField(label='Password',required=True,widget= forms.PasswordInput(attrs={'maxlength':150,'placeholder':'Password'}))
+    email = forms.EmailField(label='Email',required=True, widget=forms.EmailInput(attrs={'maxlength':150,'placeholder':'Enter Email','autocomplete':'off'}))
+    password = forms.CharField(label='Password',required=True,widget= forms.PasswordInput(attrs={'maxlength':150,'placeholder':'Enter Password','autocomplete':'off'}))
 
 class SignUpForm(UserCreationForm):
-    email = forms.EmailField(label='Email',required=True, widget=forms.EmailInput(attrs={'maxlength':150,'placeholder':'Email'}))
-    first_name = forms.CharField(label='First Name',required=False, widget=forms.TextInput(attrs={'maxlength':150,'placeholder':'First Name'}))
-    last_name = forms.CharField(label = 'Last Name',required=False, widget=forms.TextInput(attrs={'maxlength':150,'placeholder':'Last Name'}))
-    password1 = forms.CharField(label='Password',widget= forms.PasswordInput(attrs={'maxlength':150,'placeholder':'Password'}))
-    password2 = forms.CharField(label='Password2',widget= forms.PasswordInput(attrs={'maxlength':150,'placeholder':'Repeat Password'}))
+    email = forms.EmailField(label='Email',required=True, widget=forms.EmailInput(attrs={'maxlength':150,'placeholder':'Enter Email','autocomplete':'off'}))
+    first_name = forms.CharField(label='First Name',required=False, widget=forms.TextInput(attrs={'maxlength':150,'placeholder':'Enter First Name','autocomplete':'off'}))
+    last_name = forms.CharField(label = 'Last Name',required=False, widget=forms.TextInput(attrs={'maxlength':150,'placeholder':'Enter Last Name','autocomplete':'off'}))
+    password1 = forms.CharField(label='Password',widget= forms.PasswordInput(attrs={'maxlength':150,'placeholder':'Enter Password','autocomplete':'off'}))
+    password2 = forms.CharField(label='Password2',widget= forms.PasswordInput(attrs={'maxlength':150,'placeholder':'Re-enter Password','autocomplete':'off'}))
 
 
 
