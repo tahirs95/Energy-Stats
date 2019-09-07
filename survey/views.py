@@ -94,9 +94,12 @@ def add_buildings(request):
     request_data = json.loads(request.body)
 
     # loading request data
-    user_email = request_data["email"]
     page = request_data["page"]
-    user = User.objects.get(email=user_email)
+    if request.user.is_anonymous == False:
+        user = request.user
+        print(user)
+    else:
+        user = User.objects.get(email="anonymous@yahoo.com")
 
     if "title" in request_data:
         title = request_data["title"]
