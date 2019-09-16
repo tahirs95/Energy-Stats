@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 class Use(models.Model):
     uses = models.CharField(max_length=50)
+    use_num = models.IntegerField(default=1)
 
     def __str__(self):
         return self.uses

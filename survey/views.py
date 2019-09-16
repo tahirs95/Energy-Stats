@@ -70,6 +70,7 @@ def user_login(request):
 # @login_required(login_url='/login/')
 def get_buildings(request ,*args, **kwargs):
     building_dict = {}
+    building_dict["uses"] = {}
     building = Building.objects.filter(user=request.user)
     for a in building:      
         building_dict["user"] = a.user.username
@@ -77,7 +78,9 @@ def get_buildings(request ,*args, **kwargs):
         building_dict["building_name"] = a.building_name
         building_dict["address"] = a.address
         building_dict["square_footage"] = a.square_footage
-        building_dict["uses"] = [x.uses for x in a.uses.all()]
+        for x in a.uses.all():
+            building_dict["uses"][x.uses] = x.use_num
+
         building_dict["applicable_options"] = [x.options for x in a.applicable_options.all()]
         building_dict["electricity_provider"] = a.electricity_provider
         building_dict["group"] = a.group
@@ -124,8 +127,9 @@ def add_buildings(request):
             option_row = Option.objects.create(options=applicable_option)
             row.applicable_options.add(option_row)
 
-        for use in uses:
-            use_row = Use.objects.create(uses=use)
+        for use_dict in uses:
+            use_row = Use.objects.create(uses=use_dict["name"])
+            use_row.use_num = use_dict["num"]
             row.uses.add(use_row)
 
         return JsonResponse({"status":"True", "message":"Building has been added."})
