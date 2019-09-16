@@ -18,15 +18,6 @@
             <br>
             Square Footage:<br>
             <input id="four" type="text" name="lastname">
-            <br>
-            Uses:<br>
-            <input id="five" type="text" name="lastname">
-            <br>
-            Electricity Provider:<br>
-            <input id="six" type="text" name="lastname">
-            <br>
-            Applicable Options:<br>
-            <input id="seven" type="text" name="lastname">
             <br><br>
             <button>Submit</button>
         </form> 
@@ -39,14 +30,12 @@
                 e.preventDefault();
                 
                 var data = {
-                    "title": $("#one").val(),
-                    "building_name": $("#two").val(),
-                    "address": $("#three").val(),
-                    "square_footage": $("#four").val(),
-                    "uses": ["a","b"],
-                    "electricity_provider": $("#six").val(),
-                    "applicable_options": ["c","d"],
-                    "page": 1
+                    "aggregated_bills": [100,150],
+                    "co2_current": $("#two").val(),
+                    "co2_2024": $("#three").val(),
+                    "co2_2030": $("#four").val(),
+                    "page": 3,
+                    "group": 7
                 };
                 console.log(data);
                 var settings = {
