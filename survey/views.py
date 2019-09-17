@@ -18,12 +18,16 @@ from django.contrib.auth import login, authenticate, logout
 from .models import Building, Use, Bill, Option
 import json
 
-@login_required(login_url='/login/')
+#@login_required(login_url='/login/')
 def home(request ,*args, **kwargs):
     print(request.user)
     # return HttpResponse("<h1> Hello World </h1>")
-    dict_new = {"guid":"121131313", "name":"Django and Python", "status":True, "html":"<i>Hifari<i>"}
-    return render(request, "home.html", {'dict':dict_new})
+    return render(request, "home.html")
+
+def home1(request ,*args, **kwargs):
+    print(request.user)
+    # return HttpResponse("<h1> Hello World </h1>")
+    return render(request, "home1.html")
 
 @csrf_exempt
 def signup(request):
@@ -130,6 +134,7 @@ def add_buildings(request):
         for use_dict in uses:
             use_row = Use.objects.create(uses=use_dict["name"])
             use_row.use_num = use_dict["num"]
+            use_row.save()
             row.uses.add(use_row)
 
         return JsonResponse({"status":"True", "message":"Building has been added."})
