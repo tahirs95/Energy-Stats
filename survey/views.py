@@ -74,25 +74,31 @@ def user_login(request):
 # @login_required(login_url='/login/')
 def get_buildings(request ,*args, **kwargs):
     building_dict = {}
-    building_dict["uses"] = {}
-    building = Building.objects.filter(user=request.user)
-    for a in building:      
-        building_dict["user"] = a.user.username
-        building_dict["title"] = a.title
-        building_dict["building_name"] = a.building_name
-        building_dict["address"] = a.address
-        building_dict["square_footage"] = a.square_footage
-        for x in a.uses.all():
-            building_dict["uses"][x.uses] = x.use_num
+    if request.user.is_anonymous == False:
+        user = request.user
+    else:
+        user = User.objects.get(email="anonymous@yahoo.com")
+    print(user)
+    buildings = Building.objects.filter(user=user)
+    for i, building in enumerate(buildings):
+        building_dict[i] = {}
+        building_dict[i]["user"] = building.user.username
+        building_dict[i]["title"] = building.title
+        building_dict[i]["building_name"] = building.building_name
+        building_dict[i]["address"] = building.address
+        building_dict[i]["square_footage"] = building.square_footage
+        building_dict[i]["uses"] = {}
+        for x in building.uses.all():
+            building_dict[i]["uses"][x.uses] = x.use_num
 
-        building_dict["applicable_options"] = [x.options for x in a.applicable_options.all()]
-        building_dict["electricity_provider"] = a.electricity_provider
-        building_dict["group"] = a.group
-        building_dict["aggregated_bills"] = [x.bills for x in a.aggregated_bills.all()]
-        building_dict["co2_current"] = a.co2_current
-        building_dict["co2_2024"] = a.co2_2024
-        building_dict["co2_2030"] = a.co2_2030
-        building_dict["page"] = a.page
+        building_dict[i]["applicable_options"] = [x.options for x in building.applicable_options.all()]
+        building_dict[i]["electricity_provider"] = building.electricity_provider
+        building_dict[i]["group"] = building.group
+        building_dict[i]["aggregated_bills"] = [x.bills for x in building.aggregated_bills.all()]
+        building_dict[i]["co2_current"] = building.co2_current
+        building_dict[i]["co2_2024"] = building.co2_2024
+        building_dict[i]["co2_2030"] = building.co2_2030
+        building_dict[i]["page"] = building.page
     return JsonResponse({'dict':building_dict})
 
 
