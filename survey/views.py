@@ -154,7 +154,10 @@ def add_buildings(request):
         building.page = page
         building.save()
 
-        return JsonResponse({"status":"True", "message":"Building has been edited."})
+        if request.user.is_anonymous == True:
+            return JsonResponse({"status":"True", "user":user_email ,"message":"Building has been edited."})
+        else:
+            return JsonResponse({"status":"True", "message":"Building has been edited."})
     
     elif "aggregated_bills" in request_data:
 
@@ -193,11 +196,34 @@ def email(request):
     else:
         email = request.user.email
 
-    subject = 'Thank you for registering to our site'
+    subject = '2024 Compliance Checklist'
     message = '''
-                Hello I am Tahir.
-                Please help me out.
-                I like it.
+                Currently {a} of your building's energy use is ELECTRICITY.
+
+                Currently {b} of your building's energy use is NATURAL GAS.
+
+                Currently {c} of your building's energy use is FUEL OIL. 
+
+                To meet the compliance requirements with {d} reduction coming from ELECTRICITY, {e} reduction coming from NATURAL GAS, and {f} reduction coming from FUEL OIL your building will need to reduce as follows:
+
+                {g} kWh 
+                {h} kBTU (Natural Gas)
+                {i} kBTU (Fuel Oil #2)
+                In addition to the energy reductions listed above your building needs to verify:
+
+                - temperature set points for heat and hot water reflect appropriate space occupancy and facility requirements
+                - all heating system leaks are repaired
+                - heating system is maintained, including ensuring that system component parts are clean and in good operating conditions
+                - individual temperature controls are installed or insulated radiator enclosures with temperature controls are on all radiators
+                - all pipes for heating and/or hot water are insulated
+                - steam system condensate tank or water tanks are insulated
+                - indoor and outdoor heating system sensors and boiler controls are installed to allow for proper set points
+                - all steam traps repaired or replaced such that all are in working order
+                - steam system master venting at the ends of main, large horizontal pipes, and tops of risers, vertical pipes branching off a main all installed or upgraded
+                - lighting upgraded to comply with the standards for new systems set forth in section 805 of the New York City energy conservation code and/or applicable standards referenced in such energy code on or prior to December 31, 2024. - subject to exception 1 in section 28-310.3
+                - weatherizing and air sealing where appropriate, including windows and ductwork, with focus on whole-building insulation
+                - timers on exhaust fans installed
+                - radiant barriers behind all radiators are installed
     '''
     email_from = settings.EMAIL_HOST_USER
     recipient_list = []
