@@ -184,7 +184,15 @@ def add_buildings(request):
     else:
         return JsonResponse({"status":"False", "message":"Invalid Request data."})
 
+@csrf_exempt
 def email(request):
+    print(request.user)
+    if request.user.is_anonymous == True:
+        request_data = json.loads(request.body)
+        email = request_data["email"]
+    else:
+        email = request.user.email
+
     subject = 'Thank you for registering to our site'
     message = '''
                 Hello I am Tahir.
@@ -192,7 +200,8 @@ def email(request):
                 I like it.
     '''
     email_from = settings.EMAIL_HOST_USER
-    recipient_list = ['tahirs95@hotmail.com',]
+    recipient_list = []
+    recipient_list.append(email)
     send_mail( subject, message, email_from, recipient_list )
     return JsonResponse({"status":"True", "message":"Email has been sent."})
 
