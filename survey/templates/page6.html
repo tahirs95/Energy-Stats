@@ -1,0 +1,662 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Energy Compliance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static "css3/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css3/animate.css" %}">
+    <link rel="stylesheet" href="{% static "css3/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css3/bootstrap-datepicker.css" %}">
+    <link rel="stylesheet" href="{% static "css3/jquery.timepicker.css" %}">
+
+    <link rel="stylesheet" href="{% static "fonts3/ionicons/css/ionicons.min.css" %}">
+    <link rel="stylesheet" href="{% static "fonts3/fontawesome/css/font-awesome.min.css" %}">
+
+    <link rel="stylesheet" href="{% static "fonts3/flaticon/font/flaticon.css" %}">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static "css3/style.css" %}">
+  </head>
+  <style>
+    .btn-primary {
+      color: #111;
+      background-color: #2cab5a;
+      border-color: #2cab5a;
+    }
+
+    a {
+      color: #2cab5a;
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+          max-width: 1200px;
+      }
+    }
+
+    input {
+        text-align:center;
+    }
+  </style>
+  <body>
+
+    <header role="banner">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container" style="margin-left:3%;margin-right:3%">
+          <a class="navbar-brand" href="index.html"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="70"></a> 
+          <a class="navbar-brand" href="index.html">Energy Compliance</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul style="width:75%;" class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="about.html">Blog</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-left:100%" class="nav-item">
+                <a class="nav-link" href="index.html"><b>SIGNUP</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"><b>LOGIN</b></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <section class="home-slider  inner-page owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'img/2.jpg' %}');">
+        
+        <div class="container">
+          <div class="row slider-text align-items-center justify-content-center text-center">
+            <div class="col-md-7 col-sm-12 element-animate">
+              <h1>Utility Bill Information</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END slider -->
+    
+    <section class="section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center element-animate">
+            <h2 class="text-uppercase heading border-bottom mb-8 element-animate">Billing Information</h3><br>
+            <p>Following are the utility categories you provided for your building:</p><br>
+          </div>
+          <div id = "elect" class="col-md-8 text-center element-animate" style="display:none;">
+            <h3 class="text-uppercase heading border-bottom mb-8">Electricity</h3>
+            <p class="text-uppercase heading mb-4">Electricity Bill Data<br> (Most recent 12 months)<br><a href="{% static "img/elect.jpg" %}" target="_blank"><i>Need help finding the info on your bill?<br>Click to view the sample!</i></a></p>
+            <div class="form-group">
+                <label for="Student">Month 01 Total kWh </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 02 Total kWh </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 03 Total kWh </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 04 Total kWh </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 05 Total kWh </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 06 Total kWh </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 07 Total kWh </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 08 Total kWh </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 09 Total kWh </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 10 Total kWh </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 11 Total kWh </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 12 Total kWh </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+          </div>
+
+          <div id="nat" class="col-md-8 text-center element-animate" style="margin-top:3%; display:none;">
+            <h3 class="text-uppercase heading border-bottom mb-8">Natural Gas</h3>
+            <p class="text-uppercase heading mb-4">Natural Gas Bill Data<br> (Most recent 12 months)<br><a href="{% static "img/nat.jpg" %}" target="_blank"><i>Need help finding the info on your bill?<br>Click to view the sample!</i></a></p>
+            <div class="form-group">
+                <label for="Student">Month 01 Total THERMS </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 02 Total THERMS </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 03 Total THERMS </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 04 Total THERMS </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 05 Total THERMS </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 06 Total THERMS </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 07 Total THERMS </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 08 Total THERMS </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 09 Total THERMS </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 10 Total THERMS </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 11 Total THERMS </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 12 Total THERMS </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+          </div>
+
+          <div id="heat2" class="col-md-8 text-center element-animate" style="margin-top:3%; display:none;">
+            <h3 class="text-uppercase heading border-bottom mb-8 element-animate">Heating Oil #2</h3>
+            <p class="text-uppercase heading mb-4">Heating Oil #2 Bill Data<br> (Most recent 12 months)<br><a href="{% static "img/fuel1.jpg" %}" target="_blank"><i>Need help finding the info on your bill?<br>Click to view the sample!</i></a></p>
+            <div class="form-group">
+                <label for="Student">Month 01 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 02 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 03 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 04 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 05 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 06 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 07 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 08 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 09 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 10 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 11 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 12 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+          </div>
+          
+          <div id="heat4" class="col-md-8 text-center element-animate" style="margin-top:3%; display:none;">
+            <h3 class="text-uppercase heading border-bottom mb-8">Heating Oil #4</h3>
+            <p class="text-uppercase heading mb-4">Heating Oil #4 Bill Data<br> (Most recent 12 months)<br><a href="{% static "img/fuel1.jpg" %}" target="_blank"><i>Need help finding the info on your bill?<br>Click to view the sample!</i></a></p>
+            <div class="form-group">
+                <label for="Student">Month 01 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 02 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 03 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 04 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 05 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 06 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 07 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 08 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 09 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 10 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 11 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 12 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+          </div>
+          
+          <div id="steam" class="col-md-8 text-center element-animate" style="margin-top:3%; display:none;">
+            <h3 class="text-uppercase heading border-bottom mb-8">Steam</h3>
+            <p class="text-uppercase heading mb-4">Steam Bill Data<br> (Most recent 12 months)<br><a href="{% static "img/fuel1.jpg" %}" target="_blank"><i>Need help finding the info on your bill?<br>Click to view the sample!</i></a></p>
+            <div class="form-group">
+                <label for="Student">Month 01 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 02 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 03 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 04 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 05 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 06 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 07 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 08 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 09 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 10 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 11 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+            <div class="form-group">
+                <label for="Student">Month 12 Total kBTU </label>
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+            </div>
+          </div>
+          
+        </div>
+        <div class="row justify-content-center element-animate"> 
+          <div class="col-md-4"><p><button id="clic" class="btn btn-primary btn-block">CLICK HERE TO CONTINUE</button></p></div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section border-t">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center mb-5">
+            <h2 class="text-uppercase heading border-bottom mb-4">Testimonial</h2>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12 element-animate">
+            <div class="media d-block media-testimonial text-center">
+              <img src="{% static "img/person.jpg" %}" alt="Image placeholder" class="img-fluid mb-3">
+              <p>Kevin Deiber, <a href="#">Energy Compliance Inc.</a></p>
+              <div class="media-body">
+                <blockquote>
+                  <p>Director</p>  
+                </blockquote>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+      <div style="margin-left:15%" class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </div>
+          <div class="col-md-3">
+            <ul class="list-unstyled footer-link">
+              <li class="d-flex"><span class="mr-3">A:</span><span class="text-black">34 Street Name, City Name Here, United States</span></li>
+              <li class="d-flex"><span class="mr-3">T:</span><span class="text-black">+1 242 4942 290</span></li>
+              <li class="d-flex"><span class="mr-3">E:</span><span class="text-black">info@yourdomain.com</span></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled footer-link">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Social</h3>
+            <ul class="list-unstyled footer-link d-flex footer-social">
+              <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END footer -->
+
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+
+    <script src="{% static "js3/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "js3/popper.min.js" %}"></script>
+    <script src="{% static "js3/bootstrap.min.js" %}"></script>
+    <script src="{% static "js3/owl.carousel.min.js" %}"></script>
+    <script src="{% static "js3/jquery.waypoints.min.js" %}"></script>
+    <script src="{% static "js3/main.js" %}"></script>
+
+    <script>
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://127.0.0.1:8000/survey/building",
+        "method": "GET"
+      }
+
+      $.ajax(settings).done(function (response) {
+        var res = response.dict[Object.keys(response.dict).length-1];
+        var use = Object.keys(res.uses);
+        if(use.includes("Electricity")) {
+            $("#elect").show();
+        } 
+        if(use.includes("Natural Gas")) {
+            $("#nat").show();
+        }
+        if(use.includes("Heating Oil #2")) {
+            $("#nat").show();
+        }
+        if(use.includes("Heating Oil #4")) {
+            $("#nat").show();
+        }
+        if(use.includes("Steam")) {
+            $("#nat").show();
+        } 
+      });
+
+        $("#clic").click(function(){
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:8000/survey/building",
+                "method": "GET"
+            }
+
+            var aggregate = [];
+            $.ajax(settings).done(function (response) {
+                var res = response.dict[Object.keys(response.dict).length-1];
+                var use = Object.keys(res.uses);
+                var grp = res.group;
+                var sqr = res.square_footage;
+                var sum_norm = 0;
+                if(use.includes("Electricity")) {
+                    sum_elec = cat("elect");
+                    if(sum_elec == 0) {
+                        alert("Enter billing info for atleast one month, for electricity category.");
+                    } else {
+                        aggregate.push(sum_elec);
+                        sum_norm = sum_norm + (sum_elec*0.000288962);
+                    }
+                } 
+                if(use.includes("Natural Gas")) {
+                    sum_nat = cat("nat");
+                    if(sum_nat == 0) {
+                        alert("Enter billing info for atleast one month, for natural gas category.");
+                    } else {
+                        aggregate.push(sum_nat*100);
+                        sum_norm = sum_norm + (sum_nat*5.311);
+                    }
+                }
+                if(use.includes("Heating Oil #2")) {
+                    sum_heat2 = cat("heat2");
+                    if(sum_heat2 == 0) {
+                        alert("Enter billing info for atleast one month, for heating oil #2 category.");
+                    } else {
+                        aggregate.push(sum_heat2);
+                        sum_norm = sum_norm + (sum_heat2*0.00007421);
+                    }
+                }
+                if(use.includes("Heating Oil #4")) {
+                    sum_heat4 = cat("heat4");
+                    if(sum_heat4 == 0) {
+                        alert("Enter billing info for atleast one month, for heating oil #4 category.");
+                    } else {
+                        aggregate.push(sum_heat4);
+                        sum_norm = sum_norm + (sum_heat4*0.00007529);
+                    }
+                }
+                if(use.includes("Steam")) {
+                    sum_steam = cat("steam");
+                    if(sum_steam == 0) {
+                        alert("Enter billing info for atleast one month, for steam category.");
+                    } else {
+                        aggregate.push(sum_steam);
+                        sum_norm = sum_norm + (sum_steam*0.00004493);
+                    }
+                }
+
+                var f_2024 = co2_2024(grp,sum_norm);
+                var f_2030 = co2_2030(grp,sum_norm);
+
+                var d = {
+                    "aggregated_bills":aggregate,
+                    "co2_current": sum_norm,
+                    "co2_2024":f_2024,
+                    "co2_2030":f_2030,
+                    "page": 6
+                };
+
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "http://127.0.0.1:8000/survey/add_building",
+                    "method": "POST",
+                    "processData": false,
+                    "data": JSON.stringify(d)
+                };
+
+                $.ajax(settings).done(function (response) {
+                    console.log(response);
+                    location.href="page7";
+                });
+            });
+        });
+
+        function cat(id) {
+            var div = document.getElementById(id);
+            var inputs = div.getElementsByTagName('input');
+            var totalInputs = inputs.length;
+            var inputsWithValue = 0;
+            var sum = 0
+            for(var i=0; i<totalInputs; i++) {
+                if(inputs[i].value!=='') {
+                    inputsWithValue++;   
+                    sum = sum + Number(inputs[i].value);
+                } 
+            }
+
+            avg = sum / inputsWithValue;
+            console.log(avg);
+            sum = sum + (totalInputs - inputsWithValue)*avg;
+            console.log(sum);
+            return(sum);
+        }
+      
+        function co2_2024(grp,sum_norm) {
+            var res = 0;
+            if(grp == "A") {
+                res = sum_norm*0.01074;
+            } else if(grp == "B") {
+                res = sum_norm*0.00846;
+            } else if(grp == "B*") {
+                res = sum_norm*0.02381;
+            } else if(grp == "E") {
+                res = sum_norm*0.00758;
+            } else if(grp == "F") {
+                res = sum_norm*0.00574;
+            } else if(grp == "H") {
+                res = sum_norm*0.02381;
+            } else if(grp == "I-1") {
+                res = sum_norm*0.01138;
+            } else if(grp == "I-2") {
+                res = sum_norm*0.02381;
+            } else if(grp == "I-3") {
+                res = sum_norm*0.02381;
+            } else if(grp == "I-4") {
+                res = sum_norm*0.00758;
+            } else if(grp == "M") {
+                res = sum_norm*0.01181;
+            } else if(grp == "R-1") {
+                res = sum_norm*0.00987;
+            } else if(grp == "R-2") {
+                res = sum_norm*0.00675;
+            } else if(grp == "S") {
+                res = sum_norm*0.00426;
+            } else if(grp == "U") {
+                res = sum_norm*0.00426;
+            }
+            return(res);
+        };
+
+        function co2_2030(grp,sum_norm) {
+            var res = 0;
+            if(grp == "A") {
+                res = sum_norm*0.00420;
+            } else if(grp == "B") {
+                res = sum_norm*0.00453;
+            } else if(grp == "B*") {
+                res = sum_norm*0.01193;
+            } else if(grp == "E") {
+                res = sum_norm*0.00344;
+            } else if(grp == "F") {
+                res = sum_norm*0.00167;
+            } else if(grp == "H") {
+                res = sum_norm*0.01193;
+            } else if(grp == "I-1") {
+                res = sum_norm*0.00598;
+            } else if(grp == "I-2") {
+                res = sum_norm*0.01193;
+            } else if(grp == "I-3") {
+                res = sum_norm*0.01193;
+            } else if(grp == "I-4") {
+                res = sum_norm*0.00344;
+            } else if(grp == "M") {
+                res = sum_norm*0.00403;
+            } else if(grp == "R-1") {
+                res = sum_norm*0.00526;
+            } else if(grp == "R-2") {
+                res = sum_norm*0.00407;
+            } else if(grp == "S") {
+                res = sum_norm*0.00110;
+            } else if(grp == "U") {
+                res = sum_norm*0.00110;
+            }
+            return(res);
+        };
+    </script>
+  </body>
+</html>

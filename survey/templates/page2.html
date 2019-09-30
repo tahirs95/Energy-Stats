@@ -1,0 +1,232 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Energy Compliance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static "css3/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css3/animate.css" %}">
+    <link rel="stylesheet" href="{% static "css3/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css3/bootstrap-datepicker.css" %}">
+    <link rel="stylesheet" href="{% static "css3/jquery.timepicker.css" %}">
+
+    <link rel="stylesheet" href="{% static "fonts3/ionicons/css/ionicons.min.css" %}">
+    <link rel="stylesheet" href="{% static "fonts3/fontawesome/css/font-awesome.min.css" %}">
+
+    <link rel="stylesheet" href="{% static "fonts3/flaticon/font/flaticon.css" %}">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static "css3/style.css" %}">
+  </head>
+  <style>
+    .btn-primary {
+      color: #111;
+      background-color: #2cab5a;
+      border-color: #2cab5a;
+    }
+
+    a {
+      color: #2cab5a;
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+          max-width: 1200px;
+      }
+    }
+  </style>
+  <body>
+
+    <header role="banner">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container" style="margin-left:3%;margin-right:3%">
+          <a class="navbar-brand" href="index.html"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="70"></a> 
+          <a class="navbar-brand" href="index.html">Energy Compliance</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul style="width:75%;" class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="about.html">Blog</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-left:100%" class="nav-item">
+                <a class="nav-link" href="index.html"><b>SIGNUP</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"><b>LOGIN</b></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <section class="home-slider  inner-page owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'img/2.jpg' %}');">
+        
+        <div class="container">
+          <div class="row slider-text align-items-center justify-content-center text-center">
+            <div class="col-md-7 col-sm-12 element-animate">
+              <h1>Analysis Based On Information Submitted</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END slider -->
+    
+    <section class="section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center">
+            <h2 class="text-uppercase heading border-bottom mb-4">ANALYSIS</h2>
+            <div class="element-animate" style="display: inline-block; text-align: left">
+              <div class="element-animate" id="ver"></div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="row justify-content-center element-animate"> 
+          <div class="col-md-4"><p><button onclick="move()" class="btn btn-primary btn-block">CLICK TO CONTINUE</button></p></div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section border-t">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center mb-5">
+            <h2 class="text-uppercase heading border-bottom mb-4">Testimonial</h2>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12 element-animate">
+            <div class="media d-block media-testimonial text-center">
+              <img src="{% static "img/person.jpg" %}" alt="Image placeholder" class="img-fluid mb-3">
+              <p>Kevin Deiber, <a href="#">Energy Compliance Inc.</a></p>
+              <div class="media-body">
+                <blockquote>
+                  <p>Director</p>  
+                </blockquote>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+      <div style="margin-left:15%" class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </div>
+          <div class="col-md-3">
+            <ul class="list-unstyled footer-link">
+              <li class="d-flex"><span class="mr-3">A:</span><span class="text-black">34 Street Name, City Name Here, United States</span></li>
+              <li class="d-flex"><span class="mr-3">T:</span><span class="text-black">+1 242 4942 290</span></li>
+              <li class="d-flex"><span class="mr-3">E:</span><span class="text-black">info@yourdomain.com</span></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled footer-link">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Social</h3>
+            <ul class="list-unstyled footer-link d-flex footer-social">
+              <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END footer -->
+
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+
+    <script src="{% static "js3/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "js3/popper.min.js" %}"></script>
+    <script src="{% static "js3/bootstrap.min.js" %}"></script>
+    <script src="{% static "js3/owl.carousel.min.js" %}"></script>
+    <script src="{% static "js3/jquery.waypoints.min.js" %}"></script>
+    <script src="{% static "js3/main.js" %}"></script>
+
+    <script>
+
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://127.0.0.1:8000/survey/building",
+        "method": "GET"
+      }
+
+      $.ajax(settings).done(function (response) {
+        var res = response.dict[Object.keys(response.dict).length-1]
+        if (res.square_footage >= 25000 && zip_match(res.address) == "match" && res.applicable_options.includes("A rent regulated accommodation") != true) {
+          document.getElementById('ver').innerHTML = '<p class="mb-3">Based on the information you provided your building needs to comply with the Climate mobilization act.</p><p>This is because your building is larger than 25,000 sqft, falls within the covered geographical area and is not one of the protected classes.</p><ul class="list-unstyled check"><li>Your building square footage = '+res.square_footage+' sq ft</li><li>Your building address, '+res.address+' = "ACT" area</li><li>Your building is NOT one of the protected classes</li></ul>';
+        } else {
+          var a = '<p class="mb-3">The data you have provided does not require your building to comply with the "ACT" because:</p><ul class="list-unstyled check">';
+          if(res.square_footage < 25000) {
+            a = a + '<li>Your building square footage = '+res.square_footage+' sq ft (which is less than 25,000 sq ft)</li>';
+          }
+          if(zip_match(res.address) == "no match") {
+            a = a + '<li>Your building address, '+res.address+' = Outside of "ACT" area</li>';
+          }
+          if(res.applicable_options.includes("A rent regulated accommodation") == true) {
+            a = a + '<li>You listed your building as RENT REGULATED ACCOMMODATION  - this is a protected class that is not required to comply with the "ACT"</li>';
+          }
+          document.getElementById('ver').innerHTML = a + '</ul>';
+        }
+      }); 
+
+      function zip_match(to_check) {
+        var res = "no match";
+        var zip = [10453, 10457, 10460, 10458, 10467, 10468, 10451, 10452, 10456, 10454, 10455, 10459, 10474, 10463, 10471, 10466, 10469, 10470, 10475, 10461, 10462,10464, 10465, 10472, 10473, 11212, 11213, 11216, 11233, 11238, 11209, 11214, 11228, 11204, 11218, 11219, 11230, 11234, 11236, 11239, 11223, 11224, 11229, 11235, 11201, 11205, 11215, 11217, 11231, 11203, 11210, 11225, 11226, 11207, 11208, 11211, 11222, 11220, 11232, 11206, 11221, 11237, 10026, 10027, 10030, 10037, 10039, 10001, 10011, 10018, 10019, 10020, 10036, 10029, 10035, 10010, 10016, 10017, 10022, 10012, 10013, 10014, 10004, 10005, 10006, 10007, 10038, 10280, 10002, 10003, 10009, 10021, 10028, 10044, 10065, 10075, 10128, 10023, 10024, 10025, 10031, 10032, 10033, 10034, 10040, 11361, 11362, 11363, 11364, 11354, 11355, 11356, 11357, 11358, 11359, 11360, 11365, 11366, 11367, 11412, 11423, 11432, 11433, 11434, 11435, 11436, 11101, 11102, 11103, 11104, 11105, 11106, 11374, 11375, 11379, 11385, 11691, 11692, 11693, 11694, 11695, 11697, 11004, 11005, 11411, 11413, 11422, 11426, 11427, 11428, 11429, 11414, 11415, 11416, 11417, 11418, 11419, 11420, 11421, 11368, 11369, 11370, 11372, 11373, 11377, 11378, 10302, 10303, 10310, 10306, 10307, 10308, 10309, 10312, 10301, 10304, 10305, 10314];
+        for (i = 0; i < zip.length; i++) {
+          if(to_check.includes(zip[i]) == true) {
+              res = "match";
+              break;
+          };
+        };
+        return(res);
+      };
+
+      function move() {
+          location.href="page3";
+      }
+    </script>
+  </body>
+</html>

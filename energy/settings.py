@@ -131,4 +131,11 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'survey', 'static')
 
 LOGIN_REDIRECT_URL = 'survey:home'
+LOGIN_REDIRECT_URL = 'survey:page1'
+LOGIN_REDIRECT_URL = 'survey:page2'
+LOGIN_REDIRECT_URL = 'survey:page3'
+LOGIN_REDIRECT_URL = 'survey:page4'
+LOGIN_REDIRECT_URL = 'survey:page5'
+LOGIN_REDIRECT_URL = 'survey:page6'
+LOGIN_REDIRECT_URL = 'survey:page7'
 LOGOUT_REDIRECT_URL = 'login'

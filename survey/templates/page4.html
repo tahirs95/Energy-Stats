@@ -1,0 +1,475 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Energy Compliance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static "css3/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css3/animate.css" %}">
+    <link rel="stylesheet" href="{% static "css3/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css3/bootstrap-datepicker.css" %}">
+    <link rel="stylesheet" href="{% static "css3/jquery.timepicker.css" %}">
+
+    <link rel="stylesheet" href="{% static "fonts3/ionicons/css/ionicons.min.css" %}">
+    <link rel="stylesheet" href="{% static "fonts3/fontawesome/css/font-awesome.min.css" %}">
+
+    <link rel="stylesheet" href="{% static "fonts3/flaticon/font/flaticon.css" %}">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static "css3/style.css" %}">
+  </head>
+  <style>
+    .btn-primary {
+      color: #111;
+      background-color: #2cab5a;
+      border-color: #2cab5a;
+    }
+
+    a {
+      color: #2cab5a;
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+          max-width: 1200px;
+      }
+    }
+
+    p span { 
+        display: block; 
+    } 
+
+    label,select {
+      width: 200px;
+      border-radius: 3px;
+      border: 1px solid #D1D3D4
+    }
+
+    input.radio:empty {
+      margin-left: -999px;
+    }
+
+    input.radio:empty ~ label {
+      position: relative;
+      float: left;
+      line-height: 2.5em;
+      text-indent: 3.25em;
+      margin-top: 1em;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    input.radio:empty ~ label:before {
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      width: 2.5em;
+      background: #D1D3D4;
+      border-radius: 3px 0 0 3px;
+    }
+
+    input.radio:hover:not(:checked) ~ label:before {
+      content:'\2714';
+      text-indent: .9em;
+      color: #C2C2C2;
+    }
+
+    input.radio:hover:not(:checked) ~ label {
+      color: #888;
+    }
+
+    input.radio:checked ~ label:before {
+      content:'\2714';
+      text-indent: .9em;
+      color: #9CE2AE;
+      background-color: #4DCB6D;
+    }
+
+    input.radio:checked ~ label {
+      color: #777;
+    }
+
+    input.radio:focus ~ label:before {
+      box-shadow: 0 0 0 3px #999;
+    }
+  </style>
+  <body>
+
+    <header role="banner">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container" style="margin-left:3%;margin-right:3%">
+          <a class="navbar-brand" href="index.html"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="70"></a> 
+          <a class="navbar-brand" href="index.html">Energy Compliance</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul style="width:75%;" class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="about.html">Blog</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-left:100%" class="nav-item">
+                <a class="nav-link" href="index.html"><b>SIGNUP</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"><b>LOGIN</b></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <section class="home-slider  inner-page owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'img/2.jpg' %}');">
+        
+        <div class="container">
+          <div class="row slider-text align-items-center justify-content-center text-center">
+            <div class="col-md-7 col-sm-12 element-animate">
+              <h1>Determining Building Usage Type</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END slider -->
+    
+    <section class="section">
+      <div class="container">
+
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center element-animate">
+            <h2 class="text-uppercase heading border-bottom mb-4">BUILDING GROUP</h2>
+            <p>
+            <span>Your building's compliance requirements are based on the usage type or group.  Building groups include <b>A, B, B*, E, F, H, I-1, I-2, I-3, I-4, M, R-1, R-2, S, U</b>.</span>
+            <span>If you know your building group you can choose from the options below.</span>
+            <span>To find out which group your building belongs to continue below.</span><br> 
+            <span>Follow the key to figure out which group your building belong to:</span><br>
+            <span><h4 class="text-uppercase heading border-bottom mb-4 element-animate">KEY</h4></span>
+            <div class="element-animate" style="display: inline-block; text-align: left; font-size:15px;">
+              <p><b>A</b> => Gathering (75 or more persons) civic and social gatherings, religious, recreation, food or drink, awaiting transportaion</p>
+              <p><b>B</b> => Office, professional, service</p>
+              <p><b>B*</b> => Civic administrative facility for emergency response, non-production laboratory, ambulatory health care facility</p>
+              <p><b>E</b> => Through 12th grade if over 12th grade see Assembly (A)</p>
+              <p><b>F</b> => Factory (non-high hazard)</p>
+              <p><b>H</b> => Industrial (high hazard)</p>
+              <p><b>I-1</b> => Care Facilities (adult)</p>
+              <p><b>I-2</b> => Medical, surgical, psychaitric, nursing</p>
+              <p><b>I-3</b> => Restraint or Security</p>
+              <p><b>I-4</b> => Custodial care facilities (children)</p>
+              <p><b>M</b> => Retail, Markets</p>
+              <p><b>R-1</b> => Housing less than 1 month</p>
+              <p><b>R-2</b> => Permanent housing</p>
+              <p><b>S</b> => Warehouse, Freight depot, Distribution center</p>
+              <p><b>U</b> => not defined above (rare)</p>
+            </div><br><br>
+            <div class="element-animate">
+              <span>For detailed information on building group visit:</span>      
+              <span><a href="https://up.codes/viewer/new_york_city/nyc-building-code-2014/chapter/3/use-and-occupancy-classification#3">https://up.codes/viewer/new_york_city/nyc-building-code-2014/chapter/3/use-and-occupancy-classification#3</a></span> 
+              <br></p>
+            </div>
+          </div>
+          <div class="col-md-12" align="center">
+            <p class="element-animate" >Choose from the following options:</p>
+            <div class="element-animate" style="display: inline-block; text-align: left;">
+              <form>
+              <div>
+                <input type="radio" name="radio" id="radio1" class="radio"/>
+                <label style="font-size:11.5px;" for="radio1">Assembly</label>
+              </div>
+              <div>
+                <input type="radio" name="radio" id="radio2" class="radio"/>
+                <label style="font-size:11.5px;" for="radio2">Business</label><br>
+              </div>
+              <div style="display:none" id="b">
+                <div class="col-sm-12">
+                  <input type="radio" name="radio" id="radio11" class="radio"/>
+                  <label style="font-size:10px; width:100px;" for="radio11">B</label><br>
+                </div><br>
+                <div class="col-sm-12">
+                  <input type="radio" name="radio" id="radio12" class="radio"/>
+                  <label style="font-size:10px; width:100px;" for="radio12">B*</label><br>
+                </div><br>
+              </div>
+              <div>	
+                <input type="radio" name="radio" id="radio3" class="radio"/>
+                <label style="font-size:11.5px;" for="radio3">Educational</label>
+              </div>
+              <div>	
+                <input type="radio" name="radio" id="radio4" class="radio"/>
+                <label style="font-size:11.5px;" for="radio4">Factory (non-high hazard)</label>
+              </div>
+              <div>	
+                <input type="radio" name="radio" id="radio5" class="radio"/>
+                <label style="font-size:11.5px;" for="radio5">Industrial (high hazard)</label>
+              </div>
+              <div>	
+                <input type="radio" name="radio" id="radio6" class="radio"/>
+                <label style="font-size:11.5px;" for="radio6">Institutional</label>
+              </div>
+              <div style="display:none" id="i">
+                <div class="col-sm-12">
+                  <input type="radio" name="radio" id="radio13" class="radio"/>
+                  <label style="font-size:10px; width:100px;" for="radio13">I-1</label><br>
+                </div><br>
+                <div class="col-sm-12">
+                  <input type="radio" name="radio" id="radio14" class="radio"/>
+                  <label style="font-size:10px; width:100px;" for="radio14">I-2</label><br>
+                </div><br>
+                <div class="col-sm-12">
+                  <input type="radio" name="radio" id="radio15" class="radio"/>
+                  <label style="font-size:10px; width:100px;" for="radio15">I-3</label><br>
+                </div><br>
+                <div class="col-sm-12">
+                  <input type="radio" name="radio" id="radio16" class="radio"/>
+                  <label style="font-size:10px; width:100px;" for="radio16">I-4</label><br>
+                </div><br>
+              </div>
+              <div>	
+                <input type="radio" name="radio" id="radio7" class="radio"/>
+                <label style="font-size:11.5px;" for="radio7">Mercantile</label>
+              </div>
+              <div>	
+                <input type="radio" name="radio" id="radio8" class="radio"/>
+                <label style="font-size:11.5px;" for="radio8">Residential</label>
+              </div>
+              <div style="display:none" id="r">
+                <div class="col-sm-12">
+                  <input type="radio" name="radio" id="radio17" class="radio"/>
+                  <label style="font-size:10px; width:100px;" for="radio17">R-1</label><br>
+                </div><br>
+                <div class="col-sm-12">
+                  <input type="radio" name="radio" id="radio18" class="radio"/>
+                  <label style="font-size:10px; width:100px;" for="radio18">R-2</label><br>
+                </div><br>
+              </div>
+              <div>	
+                <input type="radio" name="radio" id="radio9" class="radio"/>
+                <label style="font-size:11.5px;" for="radio9">Storage</label>
+              </div>
+              <div>	
+                <input type="radio" name="radio" id="radio10" class="radio"/>
+                <label style="font-size:11.5px;" for="radio10">Accessory / Miscellaneous</label>
+              </div>
+              </form>
+            </div>-
+          </div>
+        </div>
+
+
+        <!-- END row -->
+        <div class="row justify-content-center element-animate"> 
+          <div class="col-md-4"><p><button onclick="func()" class="btn btn-primary btn-block">CLICK TO CONTINUE</button></p></div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section border-t">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center mb-5">
+            <h2 class="text-uppercase heading border-bottom mb-4">Testimonial</h2>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12 element-animate">
+            <div class="media d-block media-testimonial text-center">
+              <img src="{% static "img/person.jpg" %}" alt="Image placeholder" class="img-fluid mb-3">
+              <p>Kevin Deiber, <a href="#">Energy Compliance Inc.</a></p>
+              <div class="media-body">
+                <blockquote>
+                  <p>Director</p>  
+                </blockquote>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+      <div style="margin-left:15%" class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </div>
+          <div class="col-md-3">
+            <ul class="list-unstyled footer-link">
+              <li class="d-flex"><span class="mr-3">A:</span><span class="text-black">34 Street Name, City Name Here, United States</span></li>
+              <li class="d-flex"><span class="mr-3">T:</span><span class="text-black">+1 242 4942 290</span></li>
+              <li class="d-flex"><span class="mr-3">E:</span><span class="text-black">info@yourdomain.com</span></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled footer-link">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Social</h3>
+            <ul class="list-unstyled footer-link d-flex footer-social">
+              <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END footer -->
+
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+
+    <script src="{% static "js3/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "js3/popper.min.js" %}"></script>
+    <script src="{% static "js3/bootstrap.min.js" %}"></script>
+    <script src="{% static "js3/owl.carousel.min.js" %}"></script>
+    <script src="{% static "js3/jquery.waypoints.min.js" %}"></script>
+    <script src="{% static "js3/main.js" %}"></script>
+    <script>
+      $("#radio2").click(function(){
+        $("#b").show();
+        $("#i").hide();
+        $("#r").hide();
+      });
+      $("#radio6").click(function(){
+        $("#i").show();
+        $("#b").hide();
+        $("#r").hide();
+      });
+      $("#radio8").click(function(){
+        $("#r").show();
+        $("#b").hide();
+        $("#i").hide();
+      });
+      $("#radio1").click(function(){
+        $("#b").hide();
+        $("#i").hide();
+        $("#r").hide();
+      });
+      $("#radio3").click(function(){
+        $("#b").hide();
+        $("#i").hide();
+        $("#r").hide();
+      });
+      $("#radio4").click(function(){
+        $("#b").hide();
+        $("#i").hide();
+        $("#r").hide();
+      });
+      $("#radio5").click(function(){
+        $("#b").hide();
+        $("#i").hide();
+        $("#r").hide();
+      });
+      $("#radio7").click(function(){
+        $("#b").hide();
+        $("#i").hide();
+        $("#r").hide();
+      });
+      $("#radio9").click(function(){
+        $("#b").hide();
+        $("#i").hide();
+        $("#r").hide();
+      });
+      $("#radio10").click(function(){
+        $("#b").hide();
+        $("#i").hide();
+        $("#r").hide();
+      });
+      function func() {
+        try{
+          var radios = jQuery("input[type='radio']");
+          var r = radios.filter(":checked");
+          var id = r[0]["id"];
+          var group;
+          if(id == "radio1") {
+            group = "A";
+          } else if(id == "radio11") {
+            group = "B";
+          } else if(id == "radio12") {
+            group = "B*";
+          } else if(id == "radio3") {
+            group = "E";
+          } else if(id == "radio4") {
+            group = "F";
+          } else if(id == "radio5") {
+            group = "H";
+          } else if(id == "radio13") {
+            group = "I-1";
+          } else if(id == "radio14") {
+            group = "I-2";
+          } else if(id == "radio15") {
+            group = "I-3";
+          } else if(id == "radio16") {
+            group = "I-4";
+          } else if(id == "radio7") {
+            group = "M";
+          } else if(id == "radio17") {
+            group = "R-1";
+          }else if(id == "radio18") {
+            group = "R-2";
+          }else if(id == "radio9") {
+            group = "S";
+          }else if(id == "radio10") {
+            group = "U";
+          }
+          var d = {
+            "group": group,
+            "page": 4          
+          };
+
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://127.0.0.1:8000/survey/add_building",
+            "method": "POST",
+            "processData": false,
+            "data": JSON.stringify(d)
+          };
+
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+            location.href = "page5";
+          });
+        } catch(err) {
+          alert("Choose an option to proceed!")
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,251 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Energy Compliance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static "css3/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css3/animate.css" %}">
+    <link rel="stylesheet" href="{% static "css3/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css3/bootstrap-datepicker.css" %}">
+    <link rel="stylesheet" href="{% static "css3/jquery.timepicker.css" %}">
+
+    <link rel="stylesheet" href="{% static "fonts3/ionicons/css/ionicons.min.css" %}">
+    <link rel="stylesheet" href="{% static "fonts3/fontawesome/css/font-awesome.min.css" %}">
+
+    <link rel="stylesheet" href="{% static "fonts3/flaticon/font/flaticon.css" %}">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static "css3/style.css" %}">
+  </head>
+  <style>
+    .btn-primary {
+      color: #111;
+      background-color: #2cab5a;
+      border-color: #2cab5a;
+    }
+
+    a {
+      color: #2cab5a;
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+          max-width: 1200px;
+      }
+    }
+  </style>
+  <body>
+
+    <header role="banner">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container" style="margin-left:3%;margin-right:3%">
+          <a class="navbar-brand" href="index.html"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="70"></a> 
+          <a class="navbar-brand" href="index.html">Energy Compliance</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul style="width:75%;" class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="about.html">Blog</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-left:100%" class="nav-item">
+                <a class="nav-link" href="index.html"><b>SIGNUP</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"><b>LOGIN</b></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <section class="home-slider  inner-page owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'img/2.jpg' %}');">
+        
+        <div class="container">
+          <div class="row slider-text align-items-center justify-content-center text-center">
+            <div class="col-md-7 col-sm-12 element-animate">
+              <h1>Compliance Analysis Via Charts</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END slider -->
+    
+    <section class="section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center">
+            <h2 class="text-uppercase heading border-bottom mb-4">Building's Energy (C02) use v/s compliance limits</h2>
+            <div class="element-animate"></div>
+          </div>
+
+          <div class="row justify-content-center element-animate text-center" style="margin-top:2%"> 
+           <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6">
+                <p><span>Current Total = <span id="tot_2024"></span></span> tons<br><span>Above 2024 "Act" limit = <span id="lim_2024"></span> tons</span></p>
+              </div>
+              <div class="col-md-6">
+                <p><span>Current Total = <span id="tot_2030"></span></span> tons<br><span>Above 2030 "Act" limit = <span id="lim_2030"></span> tons</span></p>
+              </div>
+            </div>
+            <div class="element-animate"></div>
+          </div>
+          <div id="barchart" class="element-animate"></div>
+          </div>
+        </div>
+        <div class="row justify-content-center element-animate"> 
+          <div class="col-md-8 text-center"><p>Based on the information you have provided your building uses a total of <b><span id="tot_use"></span></b> tons of C02 per year.  You will need to reduce its 
+              energy use by <b><span id="tot_use_2024"></span></b> tons of C02 to meet the 2024 compliance requirement.  Your building will need to reduce its energy use by <b><span id="tot_use_2030"></span></b>
+              tons of C02 to meet the 2030 compliance requirement.</p></div>
+          </div>
+        </div>
+        <div class="row justify-content-center element-animate" style="margin-top:3%;"> 
+          <div class="col-md-4"><p><a href="services.html" class="btn btn-primary btn-block">CLICK HERE TO CONTINUE</a></p></div>
+        </div>
+    </section>
+    <section class="section border-t">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center mb-5">
+            <h2 class="text-uppercase heading border-bottom mb-4">Testimonial</h2>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12 element-animate">
+            <div class="media d-block media-testimonial text-center">
+              <img src="{% static "img/person.jpg" %}" alt="Image placeholder" class="img-fluid mb-3">
+              <p>Kevin Deiber, <a href="#">Energy Compliance Inc.</a></p>
+              <div class="media-body">
+                <blockquote>
+                  <p>Director</p>  
+                </blockquote>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+      <div style="margin-left:15%" class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </div>
+          <div class="col-md-3">
+            <ul class="list-unstyled footer-link">
+              <li class="d-flex"><span class="mr-3">A:</span><span class="text-black">34 Street Name, City Name Here, United States</span></li>
+              <li class="d-flex"><span class="mr-3">T:</span><span class="text-black">+1 242 4942 290</span></li>
+              <li class="d-flex"><span class="mr-3">E:</span><span class="text-black">info@yourdomain.com</span></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled footer-link">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Social</h3>
+            <ul class="list-unstyled footer-link d-flex footer-social">
+              <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END footer -->
+
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+
+    <script src="{% static "js3/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "js3/popper.min.js" %}"></script>
+    <script src="{% static "js3/bootstrap.min.js" %}"></script>
+    <script src="{% static "js3/owl.carousel.min.js" %}"></script>
+    <script src="{% static "js3/jquery.waypoints.min.js" %}"></script>
+    <script src="{% static "js3/main.js" %}"></script>
+    <script>
+
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      
+      
+      function drawChart() {
+
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://127.0.0.1:8000/survey/building",
+            "method": "GET"
+          }
+
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+            var res = response.dict[Object.keys(response.dict).length-1];
+            console.log(res.co2_current);
+            console.log(res.co2_2024);
+            console.log(res.co2_2030);
+            document.getElementById("tot_2024").innerHTML = res.co2_current.toFixed(2);
+            document.getElementById("tot_2030").innerHTML = res.co2_current.toFixed(2);
+            document.getElementById("tot_use").innerHTML = res.co2_current.toFixed(2);
+            document.getElementById("lim_2024").innerHTML = res.co2_2024.toFixed(2);
+            document.getElementById("lim_2030").innerHTML = res.co2_2030.toFixed(2);
+            document.getElementById("tot_use_2024").innerHTML = (res.co2_current-res.co2_2024).toFixed(2);
+            document.getElementById("tot_use_2030").innerHTML = (res.co2_current-res.co2_2030).toFixed(2);
+            var data = google.visualization.arrayToDataTable([
+                ['Genre', 'Limit', 'current usage above limit',{ role: 'annotation' } ],
+                ['2024 to 2029 Compliance Period', res.co2_2024, res.co2_current-res.co2_2024, ''],
+                ['2030 to 2034 Compliance Period', res.co2_2030, res.co2_current-res.co2_2030, '']
+            ]);
+
+            var options = {
+                'width':750, 'height':500,
+                legend: { position: 'top', maxLines: 3, alignment: 'center' },
+                bar: { groupWidth: '75%' },
+                colors: ['black','red'],
+                isStacked: true,
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('barchart'));
+            chart.draw(data, options);
+          });
+      }
+      
+    </script>
+  </body>
+</html>

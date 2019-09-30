@@ -1,0 +1,473 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Energy Compliance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static "css3/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css3/animate.css" %}">
+    <link rel="stylesheet" href="{% static "css3/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css3/bootstrap-datepicker.css" %}">
+    <link rel="stylesheet" href="{% static "css3/jquery.timepicker.css" %}">
+
+    <link rel="stylesheet" href="{% static "fonts3/ionicons/css/ionicons.min.css" %}">
+    <link rel="stylesheet" href="{% static "fonts3/fontawesome/css/font-awesome.min.css" %}">
+
+    <link rel="stylesheet" href="{% static "fonts3/flaticon/font/flaticon.css" %}">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static "css3/style.css" %}">
+  </head>
+  <style>
+    .btn-primary {
+      color: #111;
+      background-color: #2cab5a;
+      border-color: #2cab5a;
+    }
+
+    a {
+      color: #2cab5a;
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+          max-width: 1200px;
+      }
+    }
+  </style>
+
+  <body>
+    
+    <header role="banner">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container" style="margin-left:3%;margin-right:3%">
+          <a class="navbar-brand" href="index.html"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="70"></a> 
+          <a class="navbar-brand" href="index.html">Energy Compliance</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul style="width:75%;" class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="about.html">Blog</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-left:100%" class="nav-item">
+                <a class="nav-link" href="index.html"><b>SIGNUP</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"><b>LOGIN</b></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END header -->
+    
+    <section class="home-slider  inner-page owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'img/2.jpg' %}');">
+        
+        <div class="container">
+          <div class="row slider-text align-items-center justify-content-center text-center">
+            <div class="col-md-7 col-sm-12 element-animate">
+              <h1>Enter your building information to find out if your building needs to comply with the "ACT"</h1><br>
+              <p><a href="#s" class="btn btn-primary">Let's get started!</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </section>
+    <!-- END slider -->
+    
+    <section id="s" class="section">
+      <div style="margin-left:7%" class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <form action="#" method="post">
+            <div class="row">
+                <div class="col-md-8 form-group">
+                  <label for="fname"><b>Your Title</b> (i.e. Building Engineer, Property Manager)</label>
+                  <input id="title" type="text" class="form-control form-control-lg">
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col-md-8 form-group">
+                  <label for="fname"><b>Building Name</b></label>
+                  <input id="name" type="text" class="form-control form-control-lg">
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="fname"><b>Building Address</b> (Must Contain Zip Code)</label>
+                  <input id="address" type="text" class="form-control form-control-lg">
+                </div>
+              </div>
+              <br><div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="lname"><b>Building Square Footage</b></label>
+                  <input id="footage" type="number" class="form-control form-control-lg">
+                </div>
+              </div>
+              <br><div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="email"><b>Does your building use any of the following? (check all that apply)</b></label><br><br>
+                  <div class="checkbox">
+                  <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <div class="text-center">
+                            <label for="email"><b>Building Use</b></label><br>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for="email"><b>Number of meters</b></label><br>
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label id="elecl"><input id="elec" type="checkbox" value=""> Electricity</label>
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <select style="font-size:12px;" class="form-control" id="elec1">
+                            <option>1 meter</option>
+                            <option>2 meters</option>
+                            <option>3 meters</option>
+                            <option>4 meters</option>
+                            <option>5 meters</option>
+                            <option>6 meters</option>
+                            <option>7 meters</option>
+                            <option>8 meters</option>
+                            <option>9 meters</option>
+                            <option>10 meters</option>
+                        </select>
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label><input id="nat" type="checkbox" value=""> Natural Gas</label>
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <select id="nat1" style="font-size:12px;" class="form-control">
+                            <option>1 meter</option>
+                            <option>2 meters</option>
+                            <option>3 meters</option>
+                            <option>4 meters</option>
+                            <option>5 meters</option>
+                            <option>6 meters</option>
+                            <option>7 meters</option>
+                            <option>8 meters</option>
+                            <option>9 meters</option>
+                            <option>10 meters</option>
+                        </select>
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label><input id="heat" type="checkbox" value=""> Heating Oil #2</label>
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <select style="font-size:12px;" class="form-control" id="heat1">
+                            <option>1 meter</option>
+                            <option>2 meters</option>
+                            <option>3 meters</option>
+                            <option>4 meters</option>
+                            <option>5 meters</option>
+                            <option>6 meters</option>
+                            <option>7 meters</option>
+                            <option>8 meters</option>
+                            <option>9 meters</option>
+                            <option>10 meters</option>
+                        </select>
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label><input id="heat2" type="checkbox" value=""> Heating Oil #4</label>
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <select id="heat21" style="font-size:12px;" class="form-control" id="sel1">
+                            <option>1 meter</option>
+                            <option>2 meters</option>
+                            <option>3 meters</option>
+                            <option>4 meters</option>
+                            <option>5 meters</option>
+                            <option>6 meters</option>
+                            <option>7 meters</option>
+                            <option>8 meters</option>
+                            <option>9 meters</option>
+                            <option>10 meters</option>
+                        </select>
+                    </div>
+                   </div>
+                   <div class="row">
+                    <div class="col-sm-4 form-group">
+                        <label id="steal"><input id="stea" type="checkbox" value=""> Steam</label>
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <select style="font-size:12px;" class="form-control" id="stea1">
+                            <option>1 meter</option>
+                            <option>2 meters</option>
+                            <option>3 meters</option>
+                            <option>4 meters</option>
+                            <option>5 meters</option>
+                            <option>6 meters</option>
+                            <option>7 meters</option>
+                            <option>8 meters</option>
+                            <option>9 meters</option>
+                            <option>10 meters</option>
+                        </select>
+                    </div>
+                   </div>
+                  </div>
+                </div>
+              </div>
+              <br><div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="email"><b>Do any of the following apply to your building?</b></label><br>
+                  <div class="checkbox">
+                     <label><input id="c1" type="checkbox" value=""> Industrial facility used for the generation of electric power or steam</label>
+                     <label><input id="c2" type="checkbox" value=""> Real property with units individually owned and operated (HVAC systems) where no HVAC system serves more than 2 units</label>
+                     <label><input id="c3" type="checkbox" value=""> A city building</label><br>
+                     <label><input id="c4" type="checkbox" value=""> Housing development or building on land owned by the New York City housing authority</label>
+                     <label><input id="c5" type="checkbox" value=""> Real estate owned by a religious corporation - must be actually dedicated and used by such corporation exclusively as a place of public worship</label>
+                     <label><input id="c6" type="checkbox" value=""> Real estate owned by a housing development organized under article 11 of the private housing finance law</label>
+                     <label><input id="c7" type="checkbox" value=""> A rent regulated accommodation</label>
+                  </div>
+                </div>
+              </div>
+              <br><div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="message"><b>Electricity Provider</b></label>
+                  <select id="pro" style="font-size:12px;" class="form-control">
+                        <option>Con Edisson</option>
+                        <option>Other</option>
+                  </select>
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <button type="button" onclick="cont()" class="btn btn-primary btn-lg btn-block">CONTINUE</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section border-t">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center mb-5">
+            <h2 class="text-uppercase heading border-bottom mb-4">Testimonial</h2>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12 element-animate">
+            <div class="media d-block media-testimonial text-center">
+              <img src="{% static "img/person.jpg" %}" alt="Image placeholder" class="img-fluid mb-3">
+              <p>Kevin Deiber, <a href="#">Energy Compliance Inc.</a></p>
+              <div class="media-body">
+                <blockquote>
+                  <p>Director</p>  
+                </blockquote>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+      <div style="margin-left:15%" class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </div>
+          <div class="col-md-3">
+            <ul class="list-unstyled footer-link">
+              <li class="d-flex"><span class="mr-3">A:</span><span class="text-black">34 Street Name, City Name Here, United States</span></li>
+              <li class="d-flex"><span class="mr-3">T:</span><span class="text-black">+1 242 4942 290</span></li>
+              <li class="d-flex"><span class="mr-3">E:</span><span class="text-black">info@yourdomain.com</span></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled footer-link">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Social</h3>
+            <ul class="list-unstyled footer-link d-flex footer-social">
+              <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END footer -->
+
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+
+    <script src="{% static "js3/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "js3/popper.min.js" %}"></script>
+    <script src="{% static "js3/bootstrap.min.js" %}"></script>
+    <script src="{% static "js3/owl.carousel.min.js" %}"></script>
+    <script src="{% static "js3/jquery.waypoints.min.js" %}"></script>
+    <script src="{% static "js3/main.js" %}"></script>
+
+    <script>
+
+        function cont(){
+            var name = document.getElementById("name").value
+            var title = document.getElementById("title").value;
+            var address = document.getElementById("address").value;
+            var footage = document.getElementById("footage").value;
+            var uses = check1();
+            var op = check2();
+            var sup = document.getElementById("pro").value;
+            if(uses != "" && sup != "" && name != "" && title != "" && address != "") {
+                console.log("Hi");
+                var d = {
+                    "title": title,
+                    "building_name": name,
+                    "address": address,
+                    "square_footage": footage,
+                    "uses": uses,
+                    "electricity_provider": sup,
+                    "applicable_options": op,
+                    "page": 1
+                };
+
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "http://127.0.0.1:8000/survey/add_building",
+                    "method": "POST",
+                    "processData": false,
+                    "data": JSON.stringify(d)
+                };
+
+                $.ajax(settings).done(function (response) {
+                    console.log(response);
+                    location.href="page2"
+                });
+            } else {
+                alert("Fill all fields before proceeding!");
+            }
+        };
+
+        function zip_match() {
+            var res = "no match";
+            var to_check = document.getElementById("address").value;
+            var zip = [10453, 10457, 10460, 10458, 10467, 10468, 10451, 10452, 10456, 10454, 10455, 10459, 10474, 10463, 10471, 10466, 10469, 10470, 10475, 10461, 10462,10464, 10465, 10472, 10473, 11212, 11213, 11216, 11233, 11238, 11209, 11214, 11228, 11204, 11218, 11219, 11230, 11234, 11236, 11239, 11223, 11224, 11229, 11235, 11201, 11205, 11215, 11217, 11231, 11203, 11210, 11225, 11226, 11207, 11208, 11211, 11222, 11220, 11232, 11206, 11221, 11237, 10026, 10027, 10030, 10037, 10039, 10001, 10011, 10018, 10019, 10020, 10036, 10029, 10035, 10010, 10016, 10017, 10022, 10012, 10013, 10014, 10004, 10005, 10006, 10007, 10038, 10280, 10002, 10003, 10009, 10021, 10028, 10044, 10065, 10075, 10128, 10023, 10024, 10025, 10031, 10032, 10033, 10034, 10040, 11361, 11362, 11363, 11364, 11354, 11355, 11356, 11357, 11358, 11359, 11360, 11365, 11366, 11367, 11412, 11423, 11432, 11433, 11434, 11435, 11436, 11101, 11102, 11103, 11104, 11105, 11106, 11374, 11375, 11379, 11385, 11691, 11692, 11693, 11694, 11695, 11697, 11004, 11005, 11411, 11413, 11422, 11426, 11427, 11428, 11429, 11414, 11415, 11416, 11417, 11418, 11419, 11420, 11421, 11368, 11369, 11370, 11372, 11373, 11377, 11378, 10302, 10303, 10310, 10306, 10307, 10308, 10309, 10312, 10301, 10304, 10305, 10314];
+            for (i = 0; i < zip.length; i++) {
+                if(to_check.includes(zip[i]) == true) {
+                    res = "match";
+                    break;
+                };
+            };
+            return(res);
+        };
+
+        function check1(){
+            var a = [];
+            if (document.getElementById("elec").checked == true) {
+                a.push({
+                    "name": "Electricity",
+                    "num": (document.getElementById("elec1").value).replace(/\D/g,'')
+                });
+            } 
+            if (document.getElementById("nat").checked == true) {
+                a.push({
+                    "name": "Natural Gas",
+                    "num": (document.getElementById("nat1").value).replace(/\D/g,'')
+                });
+            }
+            if (document.getElementById("heat").checked == true) {
+                a.push({
+                    "name": "Heating Oil #2",
+                    "num": (document.getElementById("heat1").value).replace(/\D/g,'')
+                });
+            }
+            if (document.getElementById("heat2").checked == true) {
+                a.push({
+                    "name": "Heating Oil #4",
+                    "num": (document.getElementById("heat21").value).replace(/\D/g,'')
+                });
+            }
+            if (document.getElementById("stea").checked == true) {
+                a.push({
+                    "name": "Steam",
+                    "num": (document.getElementById("stea1").value).replace(/\D/g,'')
+                });
+            }
+            if(a == "") {
+                console.log("Error");
+            }
+            return(a);
+        }
+
+        function check2() {
+            var b = [];
+            if (document.getElementById("c1").checked == true) {
+                b.push("Industrial facility used for the generation of electric power or steam");
+            }
+            if (document.getElementById("c2").checked == true) {
+                b.push("Real property with units individually owned and operated (HVAC systems) where no HVAC system serves more than 2 units");
+            }
+            if (document.getElementById("c3").checked == true) {
+                b.push("A city building");
+            }
+            if (document.getElementById("c4").checked == true) {
+                b.push("Housing development or building on land owned by the New York City housing authority");
+            }
+            if (document.getElementById("c5").checked == true) {
+                b.push("Real estate owned by a religious corporation - must be actually dedicated and used by such corporation exclusively as a place of public worship");
+            }
+            if (document.getElementById("c6").checked == true) {
+                b.push(" Real estate owned by a housing development organized under article 11 of the private housing finance law");
+            }
+            if (document.getElementById("c7").checked == true) {
+                b.push("A rent regulated accommodation");
+            }
+            if(b == "") {
+                console.log("Error");
+            }
+            return(b);
+        }
+    </script>
+  </body>
+</html>

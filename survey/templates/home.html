@@ -1,68 +1,223 @@
-<html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <head>
-    <body>
-        <h1>Hello</h1>
-        <a class="dropdown-item" href="{%url 'logout'%}">Log Out</a>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Energy Compliance</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <form>
-            Title:<br>
-            <input id="one" type="text" name="firstname">
-            <br>
-            Building Name:<br>
-            <input id="two" type="text" name="lastname">
-            <br>
-            Address:<br>
-            <input id="three" type="text" name="lastname">
-            <br>
-            Square Footage:<br>
-            <input id="four" type="text" name="lastname">
-            <br>
-            Uses:<br>
-            <input id="five" type="text" name="lastname">
-            <br>
-            Electricity Provider:<br>
-            <input id="six" type="text" name="lastname">
-            <br>
-            Applicable Options:<br>
-            <input id="seven" type="text" name="lastname">
-            <br><br>
-            <button>Submit</button>
-        </form> 
-    </body>
-    <script>
-        $(document).ready(function () {
-            // Listen to click event on the submit button
-            $('button').click(function (e) {
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
 
-                e.preventDefault();
-                
-                var data = {
-                    "title": $("#one").val(),
-                    "building_name": $("#two").val(),
-                    "address": $("#three").val(),
-                    "square_footage": $("#four").val(),
-                    "uses": [{"name":"use 1","num":12},{"name":"use 2","num":22}],
-                    "electricity_provider": $("#six").val(),
-                    "applicable_options": ["c","d"],
-                    "page": 1
-                };
-                console.log(data);
-                var settings = {
-                    "async": true,
-                    "crossDomain": true,
-                    "url": "http://127.0.0.1:8000/survey/add_building",
-                    "method": "POST",
-                    "processData": false,
-                    "data": JSON.stringify(data)
-                };
+    <link rel="stylesheet" href="{% static "css3/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css3/animate.css" %}">
+    <link rel="stylesheet" href="{% static "css3/owl.carousel.min.css" %}">
+    <link rel="stylesheet" href="{% static "css3/bootstrap-datepicker.css" %}">
+    <link rel="stylesheet" href="{% static "css3/jquery.timepicker.css" %}">
 
-                $.ajax(settings).done(function (response) {
-                    console.log(response);
-                });
-            });
-        });
+    <link rel="stylesheet" href="{% static "fonts3/ionicons/css/ionicons.min.css" %}">
+    <link rel="stylesheet" href="{% static "fonts3/fontawesome/css/font-awesome.min.css" %}">
+
+    <link rel="stylesheet" href="{% static "fonts3/flaticon/font/flaticon.css" %}">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static "css3/style.css" %}">
+  </head>
+
+  <style>
+    .btn-primary {
+      color: #111;
+      background-color: #2cab5a;
+      border-color: #2cab5a;
+    }
+
+    a {
+      color: #2cab5a;
+    }
+
+    @media (min-width: 1200px) {
+      .container {
+          max-width: 1200px;
+      }
+    }
+  </style>
+  <body>
+    
+    <header role="banner">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container" style="margin-left:3%;margin-right:3%">
+          <a class="navbar-brand" href="index.html"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="70"></a> 
+          <a class="navbar-brand" href="index.html">Energy Compliance</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample05">
+            <ul style="width:75%;" class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="about.html">Blog</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+              </li>
+              <li style="margin-right:4%" class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-left:100%" class="nav-item">
+                <a class="nav-link" href="index.html"><b>SIGNUP</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"><b>LOGIN</b></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END header -->
+    
+    <section class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image: url('{% static 'img/1.jpg' %}');">
         
-    </script>
+        <div class="container">
+          <div class="row slider-text align-items-center justify-content-center text-center">
+            <div class="col-md-7 col-sm-12 element-animate">
+              <h1>Welcome to NYC Key Energy Compliance</h1><br>
+              <p><a href="#" class="btn btn-primary">Get Started</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item" style="background-image: url('{% static 'img/2.jpg' %}');">
+        <div style="margin-left:5%" class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-8 col-sm-12 element-animate">
+              <h1>Join us to see if your building is in compliance with the "Climate Mobilization Act"</h1>
+              <p>New York City Local Law 97 of 2019</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </section>
+    <!-- END slider -->
+
+    <section class="container cta-overlap">
+      <div class="text d-flex">
+        <h2 class="h3">NYC Key Energy Compliance</h2>
+        <div class="ml-auto btn-wrap">
+          <a href="get-quote.html" class="btn-cta btn btn-outline-white">Get Started</a>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    
+    <section class="section">
+      <div class="container">
+
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center">
+            <h2 class="text-uppercase heading border-bottom mb-4">Welcome to NYC Key Energy Compliance</h2>
+            <p class="mb-3 lead">Check to see if your building is in compliance with the 
+        "Climate Mobilization Act" - New York City Local Law 97 of 2019
+                    <br><a href="https://www1.nyc.gov/assets/buildings/local_laws/ll97of2019.pdf">https://www1.nyc.gov/assets/buildings/local_laws/ll97of2019.pdf</a></p>
+            <video class="element-animate" width="540" height="450" controls>
+              <source src="{% static "img/vid.mp4" %}" type="video/mp4">
+            </video>
+            <p class="element-animate">
+            This law requires buildings in NYC that are larger than 25,000 square feet and do not have special protection to comply with energy efficiency standards.  The standards limit the amount of Electricity, Natural Gas, Fuel Oil and Steam a building can use. The "ACT" converts the use of Electricity, Natural Gas, Fuel Oil and Steam into C02.<br>
+                    <br><b class="element-animate"> NOT COMPLYING WITH THE "ACT" CAN BE <u>VERY</u> EXPENSIVE</b><br><br>
+            If the building doesn't file a compliance report it will be <u>fined $.50 per square foot per month</u> the report isn't filed. 
+            <br>If a building uses too much C02 it will <u>fined $268 for evey unit</u> the building goes over the limit. 
+            <br>If a building files a report with false material statements it can be <u>fined $500,000 and even jailed up to 30 days</u>. 
+            <br>This site is designed to provide your building a report that details how your building can comply with the "ACT".  This report is FREE.  You will receive it INSTANTLY once you've entered your building's information.  Creating a profile is optional.  By creating a profile your building information will be saved, you can add or change information to your profile and receive updated reports.</p>
+          </div>
+        </div>
+
+        <!-- END row -->
+        <div class="row justify-content-center element-animate"> 
+          <div class="col-md-4"><p><a href="page1" class="btn btn-primary btn-block">CLICK TO CONTINUE</a></p></div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+    
+    <section class="section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center mb-5">
+            <h2 class="text-uppercase heading border-bottom mb-4">Testimonial</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 element-animate">
+            <div class="media d-block media-testimonial text-center">
+              <img src="{% static "img/person.jpg" %}" alt="Image placeholder" class="img-fluid mb-3">
+              <p>Kevin Deiber, <a href="#">Energy Compliance Inc.</a></p>
+              <div class="media-body">
+                <blockquote>
+                  <p>Director</p>  
+                </blockquote>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" role="contentinfo">
+      <div style="margin-left:15%" class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> <br>All rights reserved</p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </div>
+          <div class="col-md-3">
+            <ul class="list-unstyled footer-link">
+              <li class="d-flex"><span class="mr-3">A:</span><span class="text-black">34 Street Name, City Name Here, United States</span></li>
+              <li class="d-flex"><span class="mr-3">T:</span><span class="text-black">+1 242 4942 290</span></li>
+              <li class="d-flex"><span class="mr-3">E:</span><span class="text-black">info@yourdomain.com</span></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled footer-link">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h3>Social</h3>
+            <ul class="list-unstyled footer-link d-flex footer-social">
+              <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+              <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END footer -->
+
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+
+    <script src="{% static "js3/jquery-3.2.1.min.js" %}"></script>
+    <script src="{% static "js3/popper.min.js" %}"></script>
+    <script src="{% static "js3/bootstrap.min.js" %}"></script>
+    <script src="{% static "js3/owl.carousel.min.js" %}"></script>
+    <script src="{% static "js3/jquery.waypoints.min.js" %}"></script>
+    <script src="{% static "js3/main.js" %}"></script>
+  </body>
 </html>
