@@ -15,5 +15,6 @@ urlpatterns = [
     path('page7', views.page7, name="page7"),
     path('building', views.get_buildings),
     path('add_building', views.add_buildings),
-    path('email', views.email)
+    path('email', views.email),
+    path('get_user', views.get_user)
 ]

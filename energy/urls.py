@@ -24,11 +24,10 @@ from survey.views import user_login, signup
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('survey/', include(('reviewer.urls', 'reviewer'), namespace='reviewer')),
     path('survey/', include(('survey.urls'), namespace='survey')),
     path('signup/', signup, name='signup'),
     path('accounts/', include('django.contrib.auth.urls')),
     # path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('login/', user_login, name="login"),
-    path('logout/', LogoutView.as_view(next_page=reverse_lazy('login')), name='logout'),
+    path('logout/', LogoutView.as_view(next_page=reverse_lazy('survey:home')), name='logout'),
 ]

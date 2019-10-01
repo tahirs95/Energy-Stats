@@ -67,7 +67,7 @@ def signup(request):
             userName = str(new_user.first_name) + ' ' + str(new_user.last_name)
             new_user.username = userName
             form.save()
-            return redirect('/survey/')
+            return redirect('/login/')
     else:
         form = SignUpForm()
     return render(request, 'registration/signup.html', {
@@ -87,10 +87,37 @@ def user_login(request):
                 username = usr.username
             user = authenticate(request, username=username, password=form_data['password'])
             if user is not None:
-                login(request,user)
-                messages.success(request, "Authenticated Successfully.")
-                print("pass")
-                return redirect("/survey/")
+                try:
+                    login(request, user)
+                    print("pass")
+                    # messages.success(request, "Authenticated Successfully.")
+                except:
+                    return redirect("/login/")
+                
+                logged_user = User.objects.get(email=user.email)
+                buildings = Building.objects.filter(user=logged_user)
+                if not buildings:
+                    return redirect("/survey/")
+                else:
+                    page_number = buildings.page
+                
+                if page_number == 1:
+                    return redirect("/survey/page1")
+                elif page_number == 2:
+                    return redirect("/survey/page2")
+                elif page_number == 3:
+                    return redirect("/survey/page3")
+                elif page_number == 4:
+                    return redirect("/survey/page4")
+                elif page_number == 5:
+                    return redirect("/survey/page5")
+                elif page_number == 6:
+                    return redirect("/survey/page6")
+                elif page_number == 7:
+                    return redirect("/survey/page7")
+                elif page_number == 8:
+                    return redirect("/survey/page8")
+                
             else:
                 print("fail")
                 messages.error(request, "Email or Password is incorrect.")
@@ -100,12 +127,19 @@ def user_login(request):
     return render(request, 'registration/login.html',{'form':form})
 
 # @login_required(login_url='/login/')
+@csrf_exempt
 def get_buildings(request ,*args, **kwargs):
     building_dict = {}
+    request_data = json.loads(request.body)
+
+    # loading request data
+    if "user_email" in request_data:
+        email = request_data["user_email"]
+    
     if request.user.is_anonymous == False:
         user = request.user
     else:
-        user = User.objects.get(email="anonymous@yahoo.com")
+        user = User.objects.get(email=email)
     print(user)
     buildings = Building.objects.filter(user=user)
     for i, building in enumerate(buildings):
@@ -267,6 +301,14 @@ def email(request):
     recipient_list.append(email)
     send_mail( subject, message, email_from, recipient_list )
     return JsonResponse({"status":"True", "message":"Email has been sent."})
+
+
+def get_user(request):
+    if request.user.is_anonymous == False:
+        user = request.user
+        return JsonResponse({"status":"True", "User":user.email})
+    else:
+        return JsonResponse({"status":"False", "User":"Anonymous"})
 
     
     
