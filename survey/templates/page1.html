@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static "images/icons/favicon.ico" %}"/>
 
     <link rel="stylesheet" href="{% static "css3/bootstrap.css" %}">
     <link rel="stylesheet" href="{% static "css3/animate.css" %}">
@@ -66,12 +67,12 @@
                 <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
-            <ul class="navbar-nav mr-auto pl-lg-5 pl-0">
+            <ul id="in" class="navbar-nav mr-auto pl-lg-5 pl-0">
               <li style="margin-left:100%" class="nav-item">
-                <a class="nav-link" href="index.html"><b>SIGNUP</b></a>
+                <a class="nav-link" href="{%url 'signup'%}"><b>SIGNUP</b></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"><b>LOGIN</b></a>
+                <a class="nav-link" href="{%url 'login'%}"><b>LOGIN</b></a>
               </li>
             </ul>
           </div>
@@ -272,7 +273,7 @@
         </div>
       </div>
     </section>
-    
+    <a class="dropdown-item" href="{%url 'logout'%}">Log Out</a>
     <section class="section border-t">
       <div class="container">
         <div class="row justify-content-center mb-5 element-animate">
@@ -382,7 +383,22 @@
 
                 $.ajax(settings).done(function (response) {
                     console.log(response);
+                    console.log(response.user);
+                    localStorage.setItem("username", ""); 
+                    //$("#in").show();
+                    //$("#out").hide();
+                    if(response.user=="normal") {
+                      localStorage.setItem("username", "normal"); 
+                      //$("#in").show();
+                      //$("#out").hide();
+                    } else {
+                      localStorage.setItem("username", response.user); 
+                      //$("#out").show();
+                      
+                      //$("#in").hide();
+                    }
                     location.href="page2"
+                    console.log(localStorage.getItem("username"));
                 });
             } else {
                 alert("Fill all fields before proceeding!");

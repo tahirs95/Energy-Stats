@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static "images/icons/favicon.ico" %}"/>
 
     <link rel="stylesheet" href="{% static "css3/bootstrap.css" %}">
     <link rel="stylesheet" href="{% static "css3/animate.css" %}">
@@ -69,12 +70,12 @@
                 <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
-            <ul class="navbar-nav mr-auto pl-lg-5 pl-0">
+            <ul id="in" class="navbar-nav mr-auto pl-lg-5 pl-0">
               <li style="margin-left:100%" class="nav-item">
-                <a class="nav-link" href="index.html"><b>SIGNUP</b></a>
+                <a class="nav-link" href="{%url 'signup'%}"><b>SIGNUP</b></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html"><b>LOGIN</b></a>
+                <a class="nav-link" href="{%url 'login'%}"><b>LOGIN</b></a>
               </li>
             </ul>
           </div>
@@ -185,27 +186,27 @@
             </div>
             <div class="form-group">
                 <label for="Student">Month 07 Total THERMS </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 08 Total THERMS </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 09 Total THERMS </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 10 Total THERMS </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 11 Total THERMS </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 12 Total THERMS </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
           </div>
 
@@ -214,51 +215,51 @@
             <p class="text-uppercase heading mb-4">Heating Oil #2 Bill Data<br> (Most recent 12 months)<br><a href="{% static "img/fuel1.jpg" %}" target="_blank"><i>Need help finding the info on your bill?<br>Click to view the sample!</i></a></p>
             <div class="form-group">
                 <label for="Student">Month 01 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 02 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 03 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 04 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 05 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 06 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 07 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 08 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 09 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 10 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 11 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 12 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
           </div>
           
@@ -267,51 +268,51 @@
             <p class="text-uppercase heading mb-4">Heating Oil #4 Bill Data<br> (Most recent 12 months)<br><a href="{% static "img/fuel1.jpg" %}" target="_blank"><i>Need help finding the info on your bill?<br>Click to view the sample!</i></a></p>
             <div class="form-group">
                 <label for="Student">Month 01 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 02 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 03 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 04 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 05 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 06 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 07 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 08 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 09 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 10 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 11 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 12 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
           </div>
           
@@ -320,51 +321,51 @@
             <p class="text-uppercase heading mb-4">Steam Bill Data<br> (Most recent 12 months)<br><a href="{% static "img/fuel1.jpg" %}" target="_blank"><i>Need help finding the info on your bill?<br>Click to view the sample!</i></a></p>
             <div class="form-group">
                 <label for="Student">Month 01 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 02 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 03 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 04 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 05 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 06 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 07 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 08 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 09 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 10 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 11 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
             <div class="form-group">
                 <label for="Student">Month 12 Total kBTU </label>
-                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%; padding-right:2%;" />
+                <input type="number" name="Student" style="width:10%; margin-left:3%; padding-left:2%;" />
             </div>
           </div>
           
@@ -468,13 +469,13 @@
             $("#nat").show();
         }
         if(use.includes("Heating Oil #2")) {
-            $("#nat").show();
+            $("#heat2").show();
         }
         if(use.includes("Heating Oil #4")) {
-            $("#nat").show();
+            $("#heat4").show();
         }
         if(use.includes("Steam")) {
-            $("#nat").show();
+            $("#steam").show();
         } 
       });
 
@@ -543,6 +544,7 @@
                 var f_2030 = co2_2030(grp,sum_norm);
 
                 var d = {
+                    "user_email": localStorage.getItem("username"),
                     "aggregated_bills":aggregate,
                     "co2_current": sum_norm,
                     "co2_2024":f_2024,

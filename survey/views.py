@@ -19,7 +19,43 @@ def home(request ,*args, **kwargs):
 
 def home1(request ,*args, **kwargs):
     print(request.user)
+    # return HttpResponse("<h1> Hello World </h1>")
     return render(request, "home1.html")
+
+def page1(request ,*args, **kwargs):
+    print(request.user)
+    # return HttpResponse("<h1> Hello World </h1>")
+    return render(request, "page1.html")
+
+def page2(request ,*args, **kwargs):
+    print(request.user)
+    # return HttpResponse("<h1> Hello World </h1>")
+    return render(request, "page2.html")
+
+def page3(request ,*args, **kwargs):
+    print(request.user)
+    # return HttpResponse("<h1> Hello World </h1>")
+    return render(request, "page3.html")
+
+def page4(request ,*args, **kwargs):
+    print(request.user)
+    # return HttpResponse("<h1> Hello World </h1>")
+    return render(request, "page4.html")
+
+def page5(request ,*args, **kwargs):
+    print(request.user)
+    # return HttpResponse("<h1> Hello World </h1>")
+    return render(request, "page5.html")
+
+def page6(request ,*args, **kwargs):
+    print(request.user)
+    # return HttpResponse("<h1> Hello World </h1>")
+    return render(request, "page6.html")
+
+def page7(request ,*args, **kwargs):
+    print(request.user)
+    # return HttpResponse("<h1> Hello World </h1>")
+    return render(request, "page7.html")
 
 @csrf_exempt
 def signup(request):
@@ -141,7 +177,7 @@ def add_buildings(request):
         if request.user.is_anonymous == True:
             return JsonResponse({"status":"True", "user":user.email ,"message":"Building has been added."})
         else:
-            return JsonResponse({"status":"True", "message":"Building has been added."})
+            return JsonResponse({"status":"True", "user":"normal","message":"Building has been added."})
     
     elif "group" in request_data:
 
