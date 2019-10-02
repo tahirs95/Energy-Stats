@@ -57,6 +57,11 @@ def page7(request ,*args, **kwargs):
     # return HttpResponse("<h1> Hello World </h1>")
     return render(request, "page7.html")
 
+def page8(request ,*args, **kwargs):
+    print(request.user)
+    # return HttpResponse("<h1> Hello World </h1>")
+    return render(request, "page8.html")
+
 @csrf_exempt
 def signup(request):
     if request.method == "POST":
@@ -96,10 +101,11 @@ def user_login(request):
                 
                 logged_user = User.objects.get(email=user.email)
                 buildings = Building.objects.filter(user=logged_user)
+                print(buildings)
                 if not buildings:
                     return redirect("/survey/")
                 else:
-                    page_number = buildings.page
+                    page_number = buildings[0].page
                 
                 if page_number == 1:
                     return redirect("/survey/page1")
@@ -174,7 +180,7 @@ def add_buildings(request):
         user = request.user
         print(user)
 
-    if "title" in request_data:
+    if "title" in request_data and "page" in request_data:
 
         if request.user.is_anonymous == True:
             random_id = random.randint(0, 10000)
@@ -213,7 +219,7 @@ def add_buildings(request):
         else:
             return JsonResponse({"status":"True", "user":"normal","message":"Building has been added."})
     
-    elif "group" in request_data:
+    elif "group" in request_data and "page" in request_data:
 
         if request.user.is_anonymous == True:
             user_email = request_data["user_email"]
@@ -229,7 +235,21 @@ def add_buildings(request):
         else:
             return JsonResponse({"status":"True", "message":"Building has been edited."})
     
-    elif "aggregated_bills" in request_data:
+    elif "page" in request_data:
+
+        if request.user.is_anonymous == True:
+            user_email = request_data["user_email"]
+            user = User.objects.get(email=user_email)
+        building = Building.objects.get(user=user)
+        building.page = page
+        building.save()
+
+        if request.user.is_anonymous == True:
+            return JsonResponse({"status":"True", "user":user_email ,"message":"Building has been edited."})
+        else:
+            return JsonResponse({"status":"True", "message":"Building has been edited."})
+    
+    elif "aggregated_bills" in request_data and "page" in request_data:
 
         if request.user.is_anonymous == True:
             user_email = request_data["user_email"]

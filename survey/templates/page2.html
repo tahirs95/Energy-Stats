@@ -74,6 +74,11 @@
                 <a class="nav-link" href="{%url 'login'%}"><b>LOGIN</b></a>
               </li>
             </ul>
+            <ul id="out" class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-left:100%" class="nav-item">
+                <a class="nav-link" href="{%url 'logout'%}"><b>LOGOUT</b></a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -186,12 +191,35 @@
     <script src="{% static "js3/main.js" %}"></script>
 
     <script>
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://127.0.0.1:8000/survey/get_user",
+        "method": "GET"
+      }
+
+      $.ajax(settings).done(function (response) {
+        console.log(response.status);
+        if(response.status == "False") {
+          $("#out").hide();
+          $("#in").show();
+        } else {
+          $("#in").hide();
+          $("#out").show();
+        }
+      });
+
+      var d = {
+        "user_email": localStorage.getItem("username")
+      };
+
       console.log(localStorage.getItem("username"));
       var settings = {
         "async": true,
         "crossDomain": true,
         "url": "http://127.0.0.1:8000/survey/building",
-        "method": "GET"
+        "method": "POST",
+        "data": JSON.stringify(d)
       }
 
       $.ajax(settings).done(function (response) {
@@ -226,7 +254,27 @@
       };
 
       function move() {
-          location.href="page3";
+        var d = {
+          "user_email": localStorage.getItem("username")
+        };
+
+        console.log(localStorage.getItem("username"));
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "http://127.0.0.1:8000/survey/building",
+          "method": "POST",
+          "data": JSON.stringify(d)
+        }
+
+        $.ajax(settings).done(function (response) {
+          var res = response.dict[Object.keys(response.dict).length-1]
+          if (res.square_footage >= 25000 && zip_match(res.address) == "match" && res.applicable_options.includes("A rent regulated accommodation") != true) {
+            location.href="page4";
+          } else {
+            location.href="page3";
+          }
+        }); 
       }
     </script>
   </body>

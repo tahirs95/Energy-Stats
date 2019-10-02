@@ -46,8 +46,8 @@
     <header role="banner">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container" style="margin-left:3%;margin-right:3%">
-          <a class="navbar-brand" href="index.html"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="70"></a> 
-          <a class="navbar-brand" href="index.html">Energy Compliance</a>
+          <a class="navbar-brand" href="/survey/"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="70"></a> 
+          <a class="navbar-brand" href="home">Energy Compliance</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -55,7 +55,7 @@
           <div class="collapse navbar-collapse" id="navbarsExample05">
             <ul style="width:75%;" class="navbar-nav mr-auto pl-lg-5 pl-0">
               <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="home">Home</a>
               </li>
               <li style="margin-right:4%" class="nav-item">
                 <a class="nav-link" href="about.html">Blog</a>
@@ -73,6 +73,11 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{%url 'login'%}"><b>LOGIN</b></a>
+              </li>
+            </ul>
+            <ul id="out" class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-left:100%" class="nav-item">
+                <a class="nav-link" href="{%url 'logout'%}"><b>LOGOUT</b></a>
               </li>
             </ul>
           </div>
@@ -350,7 +355,23 @@
     <script src="{% static "js3/main.js" %}"></script>
 
     <script>
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "http://127.0.0.1:8000/survey/get_user",
+          "method": "GET"
+        }
 
+        $.ajax(settings).done(function (response) {
+          console.log(response.status);
+          if(response.status == "False") {
+            $("#out").hide();
+            $("#in").show();
+          } else {
+            $("#in").hide();
+            $("#out").show();
+          }
+        });
         function cont(){
             var name = document.getElementById("name").value
             var title = document.getElementById("title").value;
@@ -369,7 +390,7 @@
                     "uses": uses,
                     "electricity_provider": sup,
                     "applicable_options": op,
-                    "page": 1
+                    "page": 2
                 };
 
                 var settings = {
@@ -385,17 +406,10 @@
                     console.log(response);
                     console.log(response.user);
                     localStorage.setItem("username", ""); 
-                    //$("#in").show();
-                    //$("#out").hide();
                     if(response.user=="normal") {
                       localStorage.setItem("username", "normal"); 
-                      //$("#in").show();
-                      //$("#out").hide();
                     } else {
                       localStorage.setItem("username", response.user); 
-                      //$("#out").show();
-                      
-                      //$("#in").hide();
                     }
                     location.href="page2"
                     console.log(localStorage.getItem("username"));

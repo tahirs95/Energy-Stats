@@ -66,12 +66,17 @@
                 <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
-             <ul id="in" class="navbar-nav mr-auto pl-lg-5 pl-0">
+            <ul id="in" class="navbar-nav mr-auto pl-lg-5 pl-0">
               <li style="margin-left:100%" class="nav-item">
                 <a class="nav-link" href="{%url 'signup'%}"><b>SIGNUP</b></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{%url 'login'%}"><b>LOGIN</b></a>
+              </li>
+            </ul>
+            <ul id="out" class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-left:100%" class="nav-item">
+                <a class="nav-link" href="{%url 'logout'%}"><b>LOGOUT</b></a>
               </li>
             </ul>
           </div>
@@ -123,7 +128,7 @@
           </div>
         </div>
         <div class="row justify-content-center element-animate" style="margin-top:3%;"> 
-          <div class="col-md-4"><p><a href="services.html" class="btn btn-primary btn-block">CLICK HERE TO CONTINUE</a></p></div>
+          <div class="col-md-4"><p><button onclick="move()" class="btn btn-primary btn-block">CLICK HERE TO CONTINUE</button></p></div>
         </div>
     </section>
     <section class="section border-t">
@@ -202,18 +207,39 @@
     <script src="{% static "js3/main.js" %}"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script>
+    console.log(localStorage.getItem("username"));
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://127.0.0.1:8000/survey/get_user",
+        "method": "GET"
+      }
 
+      $.ajax(settings).done(function (response) {
+        console.log(response.status);
+        if(response.status == "False") {
+          $("#out").hide();
+          $("#in").show();
+        } else {
+          $("#in").hide();
+          $("#out").show();
+        }
+      });
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
       
       
       function drawChart() {
 
+          var d = {
+            "user_email": localStorage.getItem("username")
+          };
           var settings = {
             "async": true,
             "crossDomain": true,
             "url": "http://127.0.0.1:8000/survey/building",
-            "method": "GET"
+            "method": "POST",
+            "data": JSON.stringify(d)
           }
 
           $.ajax(settings).done(function (response) {
@@ -248,6 +274,9 @@
           });
       }
       
+      function move() {
+        location.href = "page8";
+      };
     </script>
   </body>
 </html>

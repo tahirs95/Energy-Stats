@@ -138,6 +138,11 @@
                 <a class="nav-link" href="{%url 'login'%}"><b>LOGIN</b></a>
               </li>
             </ul>
+            <ul id="out" class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-left:100%" class="nav-item">
+                <a class="nav-link" href="{%url 'logout'%}"><b>LOGOUT</b></a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -187,7 +192,7 @@
               <p><b>U</b> => not defined above (rare)</p>
             </div><br><br>
             <div class="element-animate">
-              <span>For detailed information on building group visit:</span>      
+              <span>For detailed information on building group visit:</span><br>    
               <span><a href="https://up.codes/viewer/new_york_city/nyc-building-code-2014/chapter/3/use-and-occupancy-classification#3">https://up.codes/viewer/new_york_city/nyc-building-code-2014/chapter/3/use-and-occupancy-classification#3</a></span> 
               <br></p>
             </div>
@@ -362,6 +367,24 @@
     <script src="{% static "js3/jquery.waypoints.min.js" %}"></script>
     <script src="{% static "js3/main.js" %}"></script>
     <script>
+
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://127.0.0.1:8000/survey/get_user",
+        "method": "GET"
+      }
+
+      $.ajax(settings).done(function (response) {
+        console.log(response.status);
+        if(response.status == "False") {
+          $("#out").hide();
+          $("#in").show();
+        } else {
+          $("#in").hide();
+          $("#out").show();
+        }
+      });
       $("#radio2").click(function(){
         $("#b").show();
         $("#i").hide();
@@ -453,7 +476,7 @@
           var d = {
             "user_email": localStorage.getItem("username"),
             "group": group,
-            "page": 4          
+            "page": 5         
           };
           console.log(d);
           var settings = {

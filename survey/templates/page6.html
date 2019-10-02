@@ -78,6 +78,11 @@
                 <a class="nav-link" href="{%url 'login'%}"><b>LOGIN</b></a>
               </li>
             </ul>
+            <ul id="out" class="navbar-nav mr-auto pl-lg-5 pl-0">
+              <li style="margin-left:100%" class="nav-item">
+                <a class="nav-link" href="{%url 'logout'%}"><b>LOGOUT</b></a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -452,11 +457,35 @@
     <script src="{% static "js3/main.js" %}"></script>
 
     <script>
+
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://127.0.0.1:8000/survey/get_user",
+        "method": "GET"
+    }
+
+      $.ajax(settings).done(function (response) {
+        console.log(response.status);
+        if(response.status == "False") {
+          $("#out").hide();
+          $("#in").show();
+        } else {
+          $("#in").hide();
+          $("#out").show();
+        }
+      });
+
+      var d = {
+        "user_email": localStorage.getItem("username")
+      };
+      
       var settings = {
         "async": true,
         "crossDomain": true,
         "url": "http://127.0.0.1:8000/survey/building",
-        "method": "GET"
+        "method": "POST",
+        "data": JSON.stringify(d)
       }
 
       $.ajax(settings).done(function (response) {
@@ -480,11 +509,15 @@
       });
 
         $("#clic").click(function(){
+            var d = {
+                "user_email": localStorage.getItem("username")
+            };
             var settings = {
                 "async": true,
                 "crossDomain": true,
                 "url": "http://127.0.0.1:8000/survey/building",
-                "method": "GET"
+                "method": "POST",
+                "data": JSON.stringify(d)
             }
 
             var aggregate = [];
@@ -549,9 +582,9 @@
                     "co2_current": sum_norm,
                     "co2_2024":f_2024,
                     "co2_2030":f_2030,
-                    "page": 6
+                    "page": 7
                 };
-
+                console.log(d);
                 var settings = {
                     "async": true,
                     "crossDomain": true,
@@ -563,7 +596,7 @@
 
                 $.ajax(settings).done(function (response) {
                     console.log(response);
-                    location.href="page7";
+                    location.href="#";
                 });
             });
         });

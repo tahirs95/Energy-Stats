@@ -66,7 +66,7 @@
                 <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
-            <ul id="in" class="navbar-nav mr-auto pl-lg-5 pl-0">
+             <ul id="in" class="navbar-nav mr-auto pl-lg-5 pl-0">
               <li style="margin-left:100%" class="nav-item">
                 <a class="nav-link" href="{%url 'signup'%}"><b>SIGNUP</b></a>
               </li>
@@ -90,7 +90,7 @@
         <div class="container">
           <div class="row slider-text align-items-center justify-content-center text-center">
             <div class="col-md-7 col-sm-12 element-animate">
-              <h1>Analysis Based On Building Group</h1>
+              <h1>REPORT</h1>
             </div>
           </div>
         </div>
@@ -102,19 +102,15 @@
       <div class="container">
         <div class="row justify-content-center mb-5 element-animate">
           <div class="col-md-8 text-center">
-            <h2 class="text-uppercase heading border-bottom mb-4">BUILDING GROUP ANALYSIS</h2>
-            <div>
-              <p><span>Based on the information you have provided your building falls into:</span><br>
-              <span>Your building belongs to <b>GROUP <span id="group"></span></b></span><br>
-              <span>This determines what your building's C02 limit.  Each group has a different limit.</span><br><br>
-              Next you'll need to enter your energy use information.  You will need to gather your utility bills. The calculator will tell you how your building compares to the "ACT" C02 limits.</p>
+            <h2 class="text-uppercase heading border-bottom mb-4">Compliance Checklist</h2>
+            <div class="element-animate" style="display: inline-block; text-align: left"><br>
               <div class="element-animate" id="ver"></div>
             </div>
           </div>
           
         </div>
         <div class="row justify-content-center element-animate"> 
-          <div class="col-md-4"><p><button onclick="move()" class="btn btn-primary btn-block">CLICK HERE TO CONTINUE</button></p></div>
+          <div class="col-md-4"><p><button onclick="move()" class="btn btn-primary btn-block">CLICK TO CONTINUE</button></p></div>
         </div>
       </div>
     </section>
@@ -216,6 +212,8 @@
       var d = {
         "user_email": localStorage.getItem("username")
       };
+
+      console.log(localStorage.getItem("username"));
       var settings = {
         "async": true,
         "crossDomain": true,
@@ -225,15 +223,45 @@
       }
 
       $.ajax(settings).done(function (response) {
-        console.log(response);
-        var res = response.dict[Object.keys(response.dict).length-1];
-        console.log(res.group);
-        document.getElementById("group").innerHTML = res.group;
-      });
-      
+        var res = response.dict[Object.keys(response.dict).length-1]
+        console.log(Object.keys(res.uses)[0]);
+        var myTotal = 0;  
+        for(var i = 0, len = res.aggregated_bills.length; i < len; i++) {
+            myTotal +=res.aggregated_bills[i];
+        };
+        console.log(myTotal);
+        a = '<ul class="list-unstyled check">';
+        for(var i=0;i<Object.keys(res.uses).length;i++) {
+            console.log(Object.keys(res.uses)[i]);
+            console.log(res.aggregated_bills[i]);
+            a = a + '<li>Currently <b>'+(res.aggregated_bills[i]/myTotal).toFixed(2)*100+'%</b>'+' of your building energy use is <b>'+Object.keys(res.uses)[i]+'</b>.</li>';
+        }
+        document.getElementById("ver").innerHTML = a+'</ul>';
+      }); 
+
       function move() {
-        location.href = "page6";
-      };
+        var d = {
+          "user_email": localStorage.getItem("username")
+        };
+
+        console.log(localStorage.getItem("username"));
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "http://127.0.0.1:8000/survey/building",
+          "method": "POST",
+          "data": JSON.stringify(d)
+        }
+
+        $.ajax(settings).done(function (response) {
+          var res = response.dict[Object.keys(response.dict).length-1]
+          if (res.square_footage >= 25000 && zip_match(res.address) == "match" && res.applicable_options.includes("A rent regulated accommodation") != true) {
+            location.href="page4";
+          } else {
+            location.href="page3";
+          }
+        }); 
+      }
     </script>
   </body>
 </html>
