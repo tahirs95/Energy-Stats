@@ -77,182 +77,168 @@
 
 
     </section>
-    <!-- END slider -->
+
     
-    <section id="s" class="section">
-      <div style="margin-left:7%" class="container">
-        <div class="row">
-          <div class="col-md-7">
-            <form action="#" method="post">
-            <div class="row">
-                <div class="col-md-8 form-group">
-                  <label for="fname"><b>Your Title</b> (i.e. Building Engineer, Property Manager)</label>
-                  <input autocomplete="off" id="title" type="text" class="form-control form-control-lg">
-                </div>
-              </div><br>
-              <div class="row">
-                <div class="col-md-8 form-group">
-                  <label for="fname"><b>Building Name</b></label>
-                  <input autocomplete="off" id="name" type="text" class="form-control form-control-lg">
-                </div>
-              </div><br>
-              <div class="row">
-                <div class="col-md-12 form-group">
-                  <label for="fname"><b>Building Address</b> (Must Contain Zip Code)</label>
-                  <input autocomplete="off" id="address" type="text" class="form-control form-control-lg">
-                </div>
-              </div>
-              <br><div class="row">
-                <div class="col-md-6 form-group">
-                  <label for="lname"><b>Building Square Footage</b></label>
-                  <input autocomplete="off" id="footage" type="number" class="form-control form-control-lg">
-                </div>
-              </div>
-              <br><div class="row">
-                <div class="col-md-12 form-group">
-                  <label for="email"><b>Does your building use any of the following? (check all that apply)</b></label><br><br>
-                  <div class="checkbox">
-                  <div class="row">
+    <section class="section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 element-animate">
+          <div class="col-md-8 text-center">
+            <h2 class="text-uppercase heading border-bottom mb-4">BUILDING INFORMATION</h2><br>
+            <div class="element-animate" style="display: inline-block; text-align: left">
+              <form class="element-animate" action="#" method="post">
+                <label for="fname"><b>Your Title</b> (i.e. Building Engineer, Property Manager)</label>
+                <input autocomplete="off" id="title" type="text" class="form-control form-control-lg">
+                <br>
+                <label for="fname"><b>Building Name</b></label>
+                <input autocomplete="off" id="name" type="text" class="form-control form-control-lg">
+                <br>
+                <label for="fname"><b>Building Address</b> (Must Contain Zip Code)</label>
+                <input autocomplete="off" id="address" type="text" class="form-control form-control-lg">
+                <br>
+                <label for="lname"><b>Building Square Footage</b></label>
+                <input autocomplete="off" id="footage" type="number" class="form-control form-control-lg"> 
+                <br>
+                <label for="email"><b>Does your building use any of the following? (check all that apply)</b></label><br><br>
+                <div class="element-animate"class="checkbox">
+                  <div class="row element-animate">
                     <div class="col-sm-4 form-group">
-                        <div class="text-center">
-                            <label for="email"><b>Building Use</b></label><br>
-                        </div>
+                      <div class="text-center">
+                          <label for="email"><b>Building Use</b></label><br>
+                      </div>
                     </div>
                     <div class="col-sm-4 form-group">
                         <label for="email"><b>Number of meters</b></label><br>
                     </div>
-                   </div>
-                   <div class="row">
+                  </div>
+                  <div class="row element-animate">
                     <div class="col-sm-4 form-group">
-                        <label id="elecl"><input id="elec" type="checkbox" value=""> Electricity</label>
+                      <label id="elecl"><input id="elec" type="checkbox" value=""> Electricity</label>
                     </div>
                     <div class="col-sm-3 form-group">
-                        <select style="font-size:12px;" class="form-control" id="elec1">
-                            <option>1 meter</option>
-                            <option>2 meters</option>
-                            <option>3 meters</option>
-                            <option>4 meters</option>
-                            <option>5 meters</option>
-                            <option>6 meters</option>
-                            <option>7 meters</option>
-                            <option>8 meters</option>
-                            <option>9 meters</option>
-                            <option>10 meters</option>
-                        </select>
+                      <select style="font-size:12px;" class="form-control" id="elec1">
+                        <option>1 meter</option>
+                        <option>2 meters</option>
+                        <option>3 meters</option>
+                        <option>4 meters</option>
+                        <option>5 meters</option>
+                        <option>6 meters</option>
+                        <option>7 meters</option>
+                        <option>8 meters</option>
+                        <option>9 meters</option>
+                        <option>10 meters</option>
+                      </select>
                     </div>
-                   </div>
-                   <div class="row">
+                  </div>
+                  <div class="row element-animate">
                     <div class="col-sm-4 form-group">
-                        <label><input id="nat" type="checkbox" value=""> Natural Gas</label>
+                      <label><input id="nat" type="checkbox" value=""> Natural Gas</label>
                     </div>
                     <div class="col-sm-3 form-group">
-                        <select id="nat1" style="font-size:12px;" class="form-control">
-                            <option>1 meter</option>
-                            <option>2 meters</option>
-                            <option>3 meters</option>
-                            <option>4 meters</option>
-                            <option>5 meters</option>
-                            <option>6 meters</option>
-                            <option>7 meters</option>
-                            <option>8 meters</option>
-                            <option>9 meters</option>
-                            <option>10 meters</option>
-                        </select>
+                      <select id="nat1" style="font-size:12px;" class="form-control">
+                        <option>1 meter</option>
+                        <option>2 meters</option>
+                        <option>3 meters</option>
+                        <option>4 meters</option>
+                        <option>5 meters</option>
+                        <option>6 meters</option>
+                        <option>7 meters</option>
+                        <option>8 meters</option>
+                        <option>9 meters</option>
+                        <option>10 meters</option>
+                      </select>
                     </div>
-                   </div>
-                   <div class="row">
+                  </div>
+                  <div class="row element-animate">
                     <div class="col-sm-4 form-group">
-                        <label><input id="heat" type="checkbox" value=""> Heating Oil #2</label>
+                      <label><input id="heat" type="checkbox" value=""> Heating Oil #2</label>
                     </div>
                     <div class="col-sm-3 form-group">
-                        <select style="font-size:12px;" class="form-control" id="heat1">
-                            <option>1 meter</option>
-                            <option>2 meters</option>
-                            <option>3 meters</option>
-                            <option>4 meters</option>
-                            <option>5 meters</option>
-                            <option>6 meters</option>
-                            <option>7 meters</option>
-                            <option>8 meters</option>
-                            <option>9 meters</option>
-                            <option>10 meters</option>
-                        </select>
+                      <select style="font-size:12px;" class="form-control" id="heat1">
+                        <option>1 meter</option>
+                        <option>2 meters</option>
+                        <option>3 meters</option>
+                        <option>4 meters</option>
+                        <option>5 meters</option>
+                        <option>6 meters</option>
+                        <option>7 meters</option>
+                        <option>8 meters</option>
+                        <option>9 meters</option>
+                        <option>10 meters</option>
+                      </select>
                     </div>
-                   </div>
-                   <div class="row">
+                  </div>
+                  <div class="row element-animate">
                     <div class="col-sm-4 form-group">
-                        <label><input id="heat2" type="checkbox" value=""> Heating Oil #4</label>
+                      <label><input id="heat2" type="checkbox" value=""> Heating Oil #4</label>
                     </div>
                     <div class="col-sm-3 form-group">
-                        <select id="heat21" style="font-size:12px;" class="form-control" id="sel1">
-                            <option>1 meter</option>
-                            <option>2 meters</option>
-                            <option>3 meters</option>
-                            <option>4 meters</option>
-                            <option>5 meters</option>
-                            <option>6 meters</option>
-                            <option>7 meters</option>
-                            <option>8 meters</option>
-                            <option>9 meters</option>
-                            <option>10 meters</option>
-                        </select>
+                      <select id="heat21" style="font-size:12px;" class="form-control" id="sel1">
+                        <option>1 meter</option>
+                        <option>2 meters</option>
+                        <option>3 meters</option>
+                        <option>4 meters</option>
+                        <option>5 meters</option>
+                        <option>6 meters</option>
+                        <option>7 meters</option>
+                        <option>8 meters</option>
+                        <option>9 meters</option>
+                        <option>10 meters</option>
+                      </select>
                     </div>
-                   </div>
-                   <div class="row">
+                  </div>
+                  <div class="row element-animate">
                     <div class="col-sm-4 form-group">
-                        <label id="steal"><input id="stea" type="checkbox" value=""> Steam</label>
+                      <label id="steal"><input id="stea" type="checkbox" value=""> Steam</label>
                     </div>
                     <div class="col-sm-3 form-group">
-                        <select style="font-size:12px;" class="form-control" id="stea1">
-                            <option>1 meter</option>
-                            <option>2 meters</option>
-                            <option>3 meters</option>
-                            <option>4 meters</option>
-                            <option>5 meters</option>
-                            <option>6 meters</option>
-                            <option>7 meters</option>
-                            <option>8 meters</option>
-                            <option>9 meters</option>
-                            <option>10 meters</option>
-                        </select>
+                      <select style="font-size:12px;" class="form-control" id="stea1">
+                        <option>1 meter</option>
+                        <option>2 meters</option>
+                        <option>3 meters</option>
+                        <option>4 meters</option>
+                        <option>5 meters</option>
+                        <option>6 meters</option>
+                        <option>7 meters</option>
+                        <option>8 meters</option>
+                        <option>9 meters</option>
+                        <option>10 meters</option>
+                      </select>
                     </div>
-                   </div>
                   </div>
                 </div>
-              </div>
-              <br><div class="row">
-                <div class="col-md-12 form-group">
-                  <label style="margin-bottom:3%;" for="email"><b>Do any of the following apply to your building?</b></label><br>
-                  <div class="checkbox">
-                     <label><input id="c1" type="checkbox" value=""> Industrial facility used for the generation of electric power or steam</label>
-                     <label><input id="c2" type="checkbox" value=""> Real property with units individually owned and operated (HVAC systems) where no HVAC system serves more than 2 units</label>
-                     <label><input id="c3" type="checkbox" value=""> A city building</label><br>
-                     <label><input id="c4" type="checkbox" value=""> Housing development or building on land owned by the New York City housing authority</label>
-                     <label><input id="c5" type="checkbox" value=""> Real estate owned by a religious corporation - must be actually dedicated and used by such corporation exclusively as a place of public worship</label>
-                     <label><input id="c6" type="checkbox" value=""> Real estate owned by a housing development organized under article 11 of the private housing finance law</label>
-                     <label><input id="c7" type="checkbox" value=""> A rent regulated accommodation</label>
+                <br><div class="row element-animate">
+                  <div class="col-md-12 form-group">
+                    <label style="margin-bottom:3%;" for="email"><b>Do any of the following apply to your building?</b></label><br>
+                      <div class="checkbox">
+                        <label><input id="c1" type="checkbox" value=""> Industrial facility used for the generation of electric power or steam</label>
+                        <label><input id="c2" type="checkbox" value=""> Real property with units individually owned and operated (HVAC systems) where no HVAC system serves more than 2 units</label>
+                        <label><input id="c3" type="checkbox" value=""> A city building</label><br>
+                        <label><input id="c4" type="checkbox" value=""> Housing development or building on land owned by the New York City housing authority</label>
+                        <label><input id="c5" type="checkbox" value=""> Real estate owned by a religious corporation - must be actually dedicated and used by such corporation exclusively as a place of public worship</label>
+                        <label><input id="c6" type="checkbox" value=""> Real estate owned by a housing development organized under article 11 of the private housing finance law</label>
+                        <label><input id="c7" type="checkbox" value=""> A rent regulated accommodation</label>
+                      </div>
                   </div>
                 </div>
-              </div>
-              <br><div class="row">
-                <div class="col-md-6 form-group">
-                  <label for="message"><b>Electricity Provider</b></label>
-                  <select id="pro" style="font-size:12px;" class="form-control">
-                        <option>Con Edisson</option>
-                        <option>Other</option>
-                  </select>
-                </div>
-              </div><br>
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <button type="button" onclick="cont()" class="btn btn-primary btn-lg btn-block">CONTINUE</button>
-                </div>
-              </div>
-            </form>
-          </div>
+                <br><div class="row element-animate">
+                  <div class="col-md-6 form-group">
+                    <label for="message"><b>Electricity Provider</b></label>
+                    <select id="pro" style="font-size:12px;" class="form-control">
+                          <option>Con Edisson</option>
+                          <option>Other</option>
+                    </select>
+                  </div>
+                </div><br>
+              </form>
+            </div>
+          </div>   
+        </div>
+        <div class="row justify-content-center element-animate"> 
+          <div class="col-md-4"><p><button onclick="cont()" class="btn btn-primary btn-lg btn-block">CLICK TO CONTINUE</button></p></div>
         </div>
       </div>
     </section>
+    
     <section class="section border-t">
       <div class="container">
         <div class="row justify-content-center mb-5 element-animate">
@@ -281,7 +267,7 @@
     </section>
 
     <footer class="site-footer" role="contentinfo">
-      <div class="container">
+      <div  class="container">
         <div class="row">
           <div class="col-md-3">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -328,7 +314,7 @@
     <script src="{% static "js3/jquery.waypoints.min.js" %}"></script>
     <script src="{% static "js3/main.js" %}"></script>
 
-    <script>
+        <script>
         var settings = {
           "async": true,
           "crossDomain": true,
