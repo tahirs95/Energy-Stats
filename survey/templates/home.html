@@ -30,57 +30,37 @@
       border-color: #2cab5a;
     }
 
+    .btn-lg:hover {
+      background-color: #2db92d !important;
+    }
     a {
       color: #2cab5a;
     }
 
-    @media (min-width: 1200px) {
-      .container {
-          max-width: 1200px;
-      }
+    header .navbar {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      background: white !important;
+    }
+
+    a:hover {
+      color: #2db92d;
     }
   </style>
+
   <body>
     
     <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container" style="margin-left:3%;margin-right:3%">
-          <a class="navbar-brand" href=""><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="70"></a> 
-          <a class="navbar-brand" href="">Energy Compliance</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul style="width:75%;" class="navbar-nav mr-auto pl-lg-5 pl-0">
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link active" href="">Home</a>
-              </li>
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="about.html">Blog</a>
-              </li>
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li>
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-            <ul id="in" class="navbar-nav mr-auto pl-lg-5 pl-0">
-              <li style="margin-left:100%" class="nav-item">
-                <a class="nav-link" href="{%url 'signup'%}"><b>SIGNUP</b></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{%url 'login'%}"><b>LOGIN</b></a>
-              </li>
-            </ul>
-            <ul id="out" class="navbar-nav mr-auto pl-lg-5 pl-0">
-              <li style="margin-left:100%" class="nav-item">
-                <a class="nav-link" href="{%url 'logout'%}"><b>LOGOUT</b></a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <a href="/survey/" class="navbar-brand"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="150"></a>
+        <a href="/survey/" class="navbar-brand text-center" style="font-size:30px;">ENERGY COMPLIANCE</a>
+        <form style="margin-top:1%" id="in" class="form-inline">
+          <a href="{%url 'signup'%}" style="margin-right:4px;" class="btn btn-outline-success my-2 my-sm-0">SIGN UP</a>
+          <a href="{%url 'login'%}" class="btn btn-outline-success my-2 my-sm-0">LOGIN</a>
+        </form>
+        <form id="out" class="form-inline">
+          <a href="{%url 'logout'%}" class="btn btn-outline-success my-2 my-sm-0">LOGOUT</a>
+        </form>
       </nav>
     </header>
     <!-- END header -->
@@ -99,7 +79,7 @@
       </div>
 
       <div class="slider-item" style="background-image: url('{% static 'img/2.jpg' %}');">
-        <div style="margin-left:5%" class="container">
+        <div class="container">
           <div class="row slider-text align-items-center">
             <div class="col-md-8 col-sm-12 element-animate">
               <h1>Join us to see if your building is in compliance with the "Climate Mobilization Act"</h1>
@@ -135,19 +115,19 @@
             <video class="element-animate" width="540" height="450" controls>
               <source src="{% static "img/vid.mp4" %}" type="video/mp4">
             </video>
-            <p class="element-animate">
-            This law requires buildings in NYC that are larger than 25,000 square feet and do not have special protection to comply with energy efficiency standards.  The standards limit the amount of Electricity, Natural Gas, Fuel Oil and Steam a building can use. The "ACT" converts the use of Electricity, Natural Gas, Fuel Oil and Steam into C02.<br>
-                    <br><b class="element-animate"> NOT COMPLYING WITH THE "ACT" CAN BE <u>VERY</u> EXPENSIVE</b><br><br>
-            If the building doesn't file a compliance report it will be <u>fined $.50 per square foot per month</u> the report isn't filed. 
-            <br>If a building uses too much C02 it will <u>fined $268 for evey unit</u> the building goes over the limit. 
-            <br>If a building files a report with false material statements it can be <u>fined $500,000 and even jailed up to 30 days</u>. 
-            <br>This site is designed to provide your building a report that details how your building can comply with the "ACT".  This report is FREE.  You will receive it INSTANTLY once you've entered your building's information.  Creating a profile is optional.  By creating a profile your building information will be saved, you can add or change information to your profile and receive updated reports.</p>
+            <p style="margin-top:10%" class="element-animate">
+            This law requires buildings in NYC that are larger than 25,000 square feet and do not have special protection to comply with energy efficiency standards.  The standards limit the amount of Electricity, Natural Gas, Fuel Oil and Steam a building can use. The "ACT" converts the use of Electricity, Natural Gas, Fuel Oil and Steam into CO2.<br>
+                    <br><b class="element-animate"> NOT COMPLYING WITH THE "ACT" CAN BE VERY EXPENSIVE</b><br><br>
+            If the building doesn't file a compliance report it will be <b>fined $0.50 per square foot per month</b> the report isn't filed. 
+            <br>If a building uses too much CO2 it will <b>fined $268 for every unit</b> the building goes over the limit. 
+            <br>If a building files a report with false material statements it can be <b>fined $500,000 and even jailed up to 30 days</b>. 
+            <br>This site is designed to provide your building a report that details how your building can comply with the "ACT". This report is FREE. You will receive it INSTANTLY once you've entered your building's information. Creating a profile is optional. By creating a profile your building information will be saved, you can add or change information to your profile and receive updated reports.</p>
           </div>
         </div>
 
         <!-- END row -->
         <div class="row justify-content-center element-animate"> 
-          <div class="col-md-4"><p><button onclick="move()" class="btn btn-primary btn-block">CLICK TO CONTINUE</button></p></div>
+          <div class="col-md-4"><p><button onclick="move()" class="btn btn-primary btn-lg btn-block">CLICK TO CONTINUE</button></p></div>
         </div>
       </div>
     </section>
@@ -179,7 +159,7 @@
     </section>
 
     <footer class="site-footer" role="contentinfo">
-      <div style="margin-left:15%" class="container">
+      <div class="container">
         <div class="row">
           <div class="col-md-3">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

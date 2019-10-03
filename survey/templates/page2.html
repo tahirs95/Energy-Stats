@@ -22,7 +22,6 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="{% static "css3/style.css" %}">
-  </head>
   <style>
     .btn-primary {
       color: #111;
@@ -34,58 +33,34 @@
       color: #2cab5a;
     }
 
-    @media (min-width: 1200px) {
-      .container {
-          max-width: 1200px;
-      }
+    .btn-lg:hover {
+      background-color: #2db92d !important;
+    }
+
+    header .navbar {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      background: white !important;
     }
   </style>
+
   <body>
-
+    
     <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container" style="margin-left:3%;margin-right:3%">
-          <a class="navbar-brand" href="index.html"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="70"></a> 
-          <a class="navbar-brand" href="index.html">Energy Compliance</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul style="width:75%;" class="navbar-nav mr-auto pl-lg-5 pl-0">
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="about.html">Blog</a>
-              </li>
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li>
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-             <ul id="in" class="navbar-nav mr-auto pl-lg-5 pl-0">
-              <li style="margin-left:100%" class="nav-item">
-                <a class="nav-link" href="{%url 'signup'%}"><b>SIGNUP</b></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{%url 'login'%}"><b>LOGIN</b></a>
-              </li>
-            </ul>
-            <ul id="out" class="navbar-nav mr-auto pl-lg-5 pl-0">
-              <li style="margin-left:100%" class="nav-item">
-                <a class="nav-link" href="{%url 'logout'%}"><b>LOGOUT</b></a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <a href="/survey/" class="navbar-brand"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="150"></a>
+        <a href="/survey/" class="navbar-brand text-center" style="font-size:30px;">ENERGY COMPLIANCE</a>
+        <form id="in" class="form-inline">
+          <a href="{%url 'signup'%}" style="margin-right:4px;" class="btn btn-outline-success my-2 my-sm-0">SIGN UP</a>
+          <a href="{%url 'login'%}" class="btn btn-outline-success my-2 my-sm-0">LOGIN</a>
+        </form>
+        <form id="out" class="form-inline">
+          <a href="{%url 'logout'%}" class="btn btn-outline-success my-2 my-sm-0">LOGOUT</a>
+        </form>
       </nav>
     </header>
-    
     <section class="home-slider  inner-page owl-carousel">
-      <div class="slider-item" style="background-image: url('{% static 'img/2.jpg' %}');">
+      <div class="slider-item" style="background-image: url('{% static 'img/im1.jpg' %}');">
         
         <div class="container">
           <div class="row slider-text align-items-center justify-content-center text-center">
@@ -110,7 +85,7 @@
           
         </div>
         <div class="row justify-content-center element-animate"> 
-          <div class="col-md-4"><p><button onclick="move()" class="btn btn-primary btn-block">CLICK TO CONTINUE</button></p></div>
+          <div class="col-md-4"><p><button onclick="move()" class="btn btn-primary btn-lg btn-block">CLICK TO CONTINUE</button></p></div>
         </div>
       </div>
     </section>
@@ -143,7 +118,7 @@
     </section>
 
     <footer class="site-footer" role="contentinfo">
-      <div style="margin-left:15%" class="container">
+      <div  class="container">
         <div class="row">
           <div class="col-md-3">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -271,8 +246,36 @@
           var res = response.dict[Object.keys(response.dict).length-1]
           if (res.square_footage >= 25000 && zip_match(res.address) == "match" && res.applicable_options.includes("A rent regulated accommodation") != true) {
             location.href="page4";
+            var d = {
+              "page":4
+            };
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "http://127.0.0.1:8000/survey/add_building",
+              "method": "POST",
+              "data": JSON.stringify(d)
+            };
+
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+            });
           } else {
             location.href="page3";
+            var d = {
+              "page":3
+            };
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "http://127.0.0.1:8000/survey/add_building",
+              "method": "POST",
+              "data": JSON.stringify(d)
+            };
+
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+            });
           }
         }); 
       }

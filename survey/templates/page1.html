@@ -30,58 +30,33 @@
       border-color: #2cab5a;
     }
 
+    .btn-lg:hover {
+      background-color: #2db92d !important;
+    }
     a {
       color: #2cab5a;
     }
 
-    @media (min-width: 1200px) {
-      .container {
-          max-width: 1200px;
-      }
+    header .navbar {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      background: white !important;
     }
   </style>
 
   <body>
     
     <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container" style="margin-left:3%;margin-right:3%">
-          <a class="navbar-brand" href="/survey/"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="70"></a> 
-          <a class="navbar-brand" href="home">Energy Compliance</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul style="width:75%;" class="navbar-nav mr-auto pl-lg-5 pl-0">
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="home">Home</a>
-              </li>
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="about.html">Blog</a>
-              </li>
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li>
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-            <ul id="in" class="navbar-nav mr-auto pl-lg-5 pl-0">
-              <li style="margin-left:100%" class="nav-item">
-                <a class="nav-link" href="{%url 'signup'%}"><b>SIGNUP</b></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{%url 'login'%}"><b>LOGIN</b></a>
-              </li>
-            </ul>
-            <ul id="out" class="navbar-nav mr-auto pl-lg-5 pl-0">
-              <li style="margin-left:100%" class="nav-item">
-                <a class="nav-link" href="{%url 'logout'%}"><b>LOGOUT</b></a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <a href="/survey/" class="navbar-brand"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="150"></a>
+        <a href="/survey/" class="navbar-brand text-center" style="font-size:30px;">ENERGY COMPLIANCE</a>
+        <form id="in" class="form-inline">
+          <a href="{%url 'signup'%}" style="margin-right:4px;" class="btn btn-outline-success my-2 my-sm-0">SIGN UP</a>
+          <a href="{%url 'login'%}" class="btn btn-outline-success my-2 my-sm-0">LOGIN</a>
+        </form>
+        <form id="out" class="form-inline">
+          <a href="{%url 'logout'%}" class="btn btn-outline-success my-2 my-sm-0">LOGOUT</a>
+        </form>
       </nav>
     </header>
     <!-- END header -->
@@ -112,25 +87,25 @@
             <div class="row">
                 <div class="col-md-8 form-group">
                   <label for="fname"><b>Your Title</b> (i.e. Building Engineer, Property Manager)</label>
-                  <input id="title" type="text" class="form-control form-control-lg">
+                  <input autocomplete="off" id="title" type="text" class="form-control form-control-lg">
                 </div>
               </div><br>
               <div class="row">
                 <div class="col-md-8 form-group">
                   <label for="fname"><b>Building Name</b></label>
-                  <input id="name" type="text" class="form-control form-control-lg">
+                  <input autocomplete="off" id="name" type="text" class="form-control form-control-lg">
                 </div>
               </div><br>
               <div class="row">
                 <div class="col-md-12 form-group">
                   <label for="fname"><b>Building Address</b> (Must Contain Zip Code)</label>
-                  <input id="address" type="text" class="form-control form-control-lg">
+                  <input autocomplete="off" id="address" type="text" class="form-control form-control-lg">
                 </div>
               </div>
               <br><div class="row">
                 <div class="col-md-6 form-group">
                   <label for="lname"><b>Building Square Footage</b></label>
-                  <input id="footage" type="number" class="form-control form-control-lg">
+                  <input autocomplete="off" id="footage" type="number" class="form-control form-control-lg">
                 </div>
               </div>
               <br><div class="row">
@@ -247,7 +222,7 @@
               </div>
               <br><div class="row">
                 <div class="col-md-12 form-group">
-                  <label for="email"><b>Do any of the following apply to your building?</b></label><br>
+                  <label style="margin-bottom:3%;" for="email"><b>Do any of the following apply to your building?</b></label><br>
                   <div class="checkbox">
                      <label><input id="c1" type="checkbox" value=""> Industrial facility used for the generation of electric power or steam</label>
                      <label><input id="c2" type="checkbox" value=""> Real property with units individually owned and operated (HVAC systems) where no HVAC system serves more than 2 units</label>
@@ -278,7 +253,6 @@
         </div>
       </div>
     </section>
-    <a class="dropdown-item" href="{%url 'logout'%}">Log Out</a>
     <section class="section border-t">
       <div class="container">
         <div class="row justify-content-center mb-5 element-animate">
@@ -307,7 +281,7 @@
     </section>
 
     <footer class="site-footer" role="contentinfo">
-      <div style="margin-left:15%" class="container">
+      <div class="container">
         <div class="row">
           <div class="col-md-3">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -498,6 +472,10 @@
             }
             return(b);
         }
+
+        $(document).on('click', '.alink', function () {
+            var url = $("#out").attr("data-url");
+        });
     </script>
   </body>
 </html>

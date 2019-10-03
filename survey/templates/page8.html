@@ -34,58 +34,40 @@
       color: #2cab5a;
     }
 
-    @media (min-width: 1200px) {
-      .container {
-          max-width: 1200px;
-      }
+    header .navbar {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      background: white !important;
+    }
+
+    .btn-lg:hover {
+      background-color: #2db92d !important;
+    }
+
+    .btn-primary:hover {
+      background-color: #2db92d !important;
     }
   </style>
+
   <body>
-
+    
     <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container" style="margin-left:3%;margin-right:3%">
-          <a class="navbar-brand" href="index.html"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="70"></a> 
-          <a class="navbar-brand" href="index.html">Energy Compliance</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul style="width:75%;" class="navbar-nav mr-auto pl-lg-5 pl-0">
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="about.html">Blog</a>
-              </li>
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li>
-              <li style="margin-right:4%" class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-             <ul id="in" class="navbar-nav mr-auto pl-lg-5 pl-0">
-              <li style="margin-left:100%" class="nav-item">
-                <a class="nav-link" href="{%url 'signup'%}"><b>SIGNUP</b></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{%url 'login'%}"><b>LOGIN</b></a>
-              </li>
-            </ul>
-            <ul id="out" class="navbar-nav mr-auto pl-lg-5 pl-0">
-              <li style="margin-left:100%" class="nav-item">
-                <a class="nav-link" href="{%url 'logout'%}"><b>LOGOUT</b></a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <nav class="navbar navbar-light bg-light justify-content-between">
+        <a href="/survey/" class="navbar-brand"><img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="150"></a>
+        <a href="/survey/" class="navbar-brand text-center" style="font-size:30px;">ENERGY COMPLIANCE</a>
+        <form id="in" class="form-inline">
+          <a href="{%url 'signup'%}" style="margin-right:4px;" class="btn btn-outline-success my-2 my-sm-0">SIGN UP</a>
+          <a href="{%url 'login'%}" class="btn btn-outline-success my-2 my-sm-0">LOGIN</a>
+        </form>
+        <form id="out" class="form-inline">
+          <a href="{%url 'logout'%}" class="btn btn-outline-success my-2 my-sm-0">LOGOUT</a>
+        </form>
       </nav>
     </header>
+  
     
     <section class="home-slider  inner-page owl-carousel">
-      <div class="slider-item" style="background-image: url('{% static 'img/2.jpg' %}');">
+      <div class="slider-item" style="background-image: url('{% static 'img/im1.jpg' %}');">
         
         <div class="container">
           <div class="row slider-text align-items-center justify-content-center text-center">
@@ -101,16 +83,50 @@
     <section class="section">
       <div class="container">
         <div class="row justify-content-center mb-5 element-animate">
-          <div class="col-md-8 text-center">
-            <h2 class="text-uppercase heading border-bottom mb-4">Compliance Checklist</h2>
+          <div class="col-md-8 text-center element-animate">
+            <img src="{% static "img/logo1.jpg" %}" alt="Bootstrappin'" width="200"><br><br>
+          </div>
+          <div id="all" class="col-md-8 text-center">
+            <h2 class="text-uppercase heading border-bottom mb-4 element-animate">New York City Climate Mobilization Act Compliance Checklist</h2>
             <div class="element-animate" style="display: inline-block; text-align: left"><br>
               <div class="element-animate" id="ver"></div>
+              <div class="elememt-animate" id="ver1"></div>
+              <div class="elememt-animate" id="ver2"></div>
+              <div class="element-animate">
+              <p>In addition to the energy reductions listed above your building needs to verify:<br>
+                <ul class="list-unstyled check">
+                <li>temperature set points for heat and hot water reflect appropriate space occupancy and facility requirements</li>
+                <li>all heating system leaks are repaired</li>
+                <li>heating system is maintained, including ensuring that system component parts are clean and in good operating conditions</li>
+                <li>individual temperature controls are installed or insulated radiator enclosures with temperature controls are on all radiators</li>
+                <li>all pipes for heating and/or hot water are insulated</li>
+                <li>steam system condensate tank or water tanks are insulated</li>
+                <li>indoor and outdoor heating system sensors and boiler controls are installed to allow for proper set points</li>
+                <li>all steam traps repaired or replaced such that all are in working order</li>
+                <li>steam system master venting at the ends of main, large horizontal pipes, and tops of risers, vertical pipes branching off a main all installed or upgraded</li>
+                <li>lighting upgraded to comply with the standards for new systems set forth in section 805 of the New York City energy conservation code and/or applicable standards referenced in such energy code on or prior to December 31, 2024.  - subject to exception 1 in section 28-310.3</li>
+                <li>weatherizing and air sealing where appropriate, including windows and ductwork, with focus on whole-building insulation</li>
+                <li>timers on exhaust fans installed
+                <li>radiant barriers behind all radiators are installed</li></ul></p>
+              </div>
             </div>
           </div>
           
         </div>
         <div class="row justify-content-center element-animate"> 
-          <div class="col-md-4"><p><button onclick="move()" class="btn btn-primary btn-block">CLICK TO CONTINUE</button></p></div>
+          <div class="btn-toolbar">
+            <button onclick="move1()" style="margin-right:20px;" class="btn btn-primary">Download As Text File</button>
+            <button onclick="move()" class="btn btn-info" style="color:white;">Send As Email</button>
+          </div><br>
+        </div>
+
+        <div style="margin-top: 2%" class="row justify-content-center element-animate"> 
+          <div id="suc" style="display:none;" class="alert alert-success">
+            <strong>Email has been sent successfully!</strong>
+          </div>
+          <div id="dan" style="display:none;" class="alert alert-danger">
+            <strong>Email has not been sent!</strong>
+          </div>
         </div>
       </div>
     </section>
@@ -143,7 +159,7 @@
     </section>
 
     <footer class="site-footer" role="contentinfo">
-      <div style="margin-left:15%" class="container">
+      <div class="container">
         <div class="row">
           <div class="col-md-3">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -231,37 +247,122 @@
         };
         console.log(myTotal);
         a = '<ul class="list-unstyled check">';
+        b = '<p>To meet the compliance requirements with ';
+        c = '<ul class="list-unstyled check">'
         for(var i=0;i<Object.keys(res.uses).length;i++) {
             console.log(Object.keys(res.uses)[i]);
             console.log(res.aggregated_bills[i]);
-            a = a + '<li>Currently <b>'+(res.aggregated_bills[i]/myTotal).toFixed(2)*100+'%</b>'+' of your building energy use is <b>'+Object.keys(res.uses)[i]+'</b>.</li>';
+            a = a + '<li>Currently <b>'+((res.aggregated_bills[i]/myTotal)*100).toFixed(2)+'%</b>'+' of your building energy use is <b>'+Object.keys(res.uses)[i]+'</b>.</li>';
+            b = b + '<b>'+((res.aggregated_bills[i]/myTotal)*100).toFixed(2)+'%</b> coming from <b>'+Object.keys(res.uses)[i]+'</b>, ';
+            if(Object.keys(res.uses)[i] == "Electricity") {
+                c = c + '<li>' + res.aggregated_bills[i] + ' kWh (<b>'+ Object.keys(res.uses)[i] + '</b>)</li>';
+            } else {
+                c = c + '<li>' +res.aggregated_bills[i] + ' kBTU (<b>'+ Object.keys(res.uses)[i] + '</b>)</li>';
+            }
         }
-        document.getElementById("ver").innerHTML = a+'</ul>';
+        document.getElementById("ver").innerHTML = a + '</ul>';
+        document.getElementById("ver1").innerHTML = b + ' your building will need to reduce as follows:</p>';
+        document.getElementById("ver2").innerHTML = c +'</ul>';
       }); 
 
       function move() {
-        var d = {
-          "user_email": localStorage.getItem("username")
-        };
 
-        console.log(localStorage.getItem("username"));
+        var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+            "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+            "xmlns='http://www.w3.org/TR/REC-html40'>"+
+            "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+        var footer = "</body></html>";
+        var sourceHTML = header+document.getElementById("all").innerHTML+footer;
+        
         var settings = {
           "async": true,
           "crossDomain": true,
-          "url": "http://127.0.0.1:8000/survey/building",
-          "method": "POST",
-          "data": JSON.stringify(d)
+          "url": "http://127.0.0.1:8000/survey/get_user",
+          "method": "GET"
         }
 
         $.ajax(settings).done(function (response) {
-          var res = response.dict[Object.keys(response.dict).length-1]
-          if (res.square_footage >= 25000 && zip_match(res.address) == "match" && res.applicable_options.includes("A rent regulated accommodation") != true) {
-            location.href="page4";
+          console.log(response.status);
+          if(response.status == "False") {
+           var person = prompt("Please enter your email address:");
+           var res = validateEmail(person);
+           console.log(person);
+           console.log(res);
+           if(res == true) {
+              var d = {
+                "email": person,
+                "message": sourceHTML
+              };
+
+              var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:8000/survey/email",
+                "method": "POST",
+                "data": JSON.stringify(d)
+              }
+
+              $.ajax(settings).done(function (response) {
+                console.log(response);
+                if(response.status == "True") {
+                  $("#suc").show();
+                  $("#dan").hide();
+                } else {
+                  $("#dan").show();
+                  $("#suc").hide();
+                }
+              });
+            }
+            
           } else {
-            location.href="page3";
+            var d = {
+              "message": sourceHTML
+            };
+
+            var settings = {
+              "async": true,
+              "crossDomain": true,
+              "url": "http://127.0.0.1:8000/survey/email",
+              "method": "POST",
+              "data": JSON.stringify(d)
+            }
+
+            $.ajax(settings).done(function (response) {
+              console.log(response);
+              if(response.status == "True") {
+                $("#suc").show();
+                $("#dan").hide();
+              } else {
+                $("#dan").show();
+                $("#suc").hide(); 
+              }
+            });
           }
-        }); 
+        });
       }
+
+      function validateEmail(emailField){
+        return(emailField.includes("@") && emailField.includes(".com"));
+      }
+      function move1() {
+        var header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+            "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+            "xmlns='http://www.w3.org/TR/REC-html40'>"+
+            "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+        var footer = "</body></html>";
+        var sourceHTML = header+document.getElementById("all").innerHTML+footer;
+        console.log(sourceHTML);
+        var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+        console.log(source);
+        var fileDownload = document.createElement("a");
+        document.body.appendChild(fileDownload);
+        fileDownload.href = source;
+        fileDownload.download = 'document.doc';
+        fileDownload.click();
+        document.body.removeChild(fileDownload);
+      }
+        
+       
     </script>
   </body>
 </html>

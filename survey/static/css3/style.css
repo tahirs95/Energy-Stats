@@ -7,6 +7,7 @@ body {
   color: #868e96;
 }
 
+
 a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
@@ -74,6 +75,12 @@ header {
   z-index: 5;
 }
 
+header .navbar {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: white !important;
+}
+
 header .navbar-brand {
   text-transform: uppercase;
   letter-spacing: .2em;
@@ -136,81 +143,6 @@ header .top-bar .social li a:hover {
   color: #fff;
   -webkit-box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 2px 0 20px 0 rgba(0, 0, 0, 0.1);
-}
-
-header .navbar {
-  padding-top: 0;
-  padding-bottom: 0;
-  background: white !important;
-}
-
-@media (max-width: 1199px) {
-  header .navbar {
-    background: white !important;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-  }
-}
-
-header .navbar .nav-link {
-  padding: 1.7rem 1rem;
-  outline: none !important;
-}
-
-@media (max-width: 1199px) {
-  header .navbar .nav-link {
-    padding: .5rem 0rem;
-  }
-}
-
-header .navbar .nav-link.active {
-  color: #2cab5a !important;
-}
-
-header .navbar .dropdown-menu {
-  font-size: 14px;
-  border-radius: 0px;
-  border: none;
-  -webkit-box-shadow: 0 2px 30px -2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 30px -2px rgba(0, 0, 0, 0.2);
-  min-width: 13em;
-  position: relative;
-  margin-top: -10px;
-}
-
-header .navbar .dropdown-menu .dropdown-item:hover {
-  background: #2cab5a;
-  color: #fff;
-}
-
-header .navbar .dropdown-menu .dropdown-item.active {
-  background: #2cab5a;
-  color: #fff;
-}
-
-header .navbar .dropdown-menu a {
-  padding-top: 7px;
-  padding-bottom: 7px;
-}
-
-header .navbar .cta-btn a {
-  background: #2cab5a;
-  color: #000 !important;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-  text-transform: uppercase;
-  padding-top: 26px !important;
-  padding-bottom: 26px !important;
-  line-height: 1;
-  -webkit-transition: .3s all ease;
-  -o-transition: .3s all ease;
-  transition: .3s all ease;
-}
-
-header .navbar .cta-btn a:hover {
-  color: #fff !important;
-  -webkit-box-shadow: 2px 0 30px -5px rgba(244, 178, 20, 0.9);
-  box-shadow: 2px 0 30px -5px rgba(244, 178, 20, 0.9);
 }
 
 .cta-overlap {
@@ -510,7 +442,7 @@ header .navbar .cta-btn a:hover {
 }
 
 .cta-link:hover {
-  background: #e4a40b;
+  background:  #2cab5a;;
 }
 
 .cover_1 {
@@ -578,7 +510,7 @@ header .navbar .cta-btn a:hover {
 
 .media-feature .icon {
   font-size: 60px;
-  color: #f4b214;
+  color: #2cab5a;;
 }
 
 .media-feature h3 {
